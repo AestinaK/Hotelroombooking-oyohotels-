@@ -8,5 +8,9 @@ namespace BBQ.Controllers
         {
             return View();
         }
+        public void test()
+        {
+            int x = 25;
+        }
     }
 }
