@@ -12,5 +12,9 @@ namespace BBQ.Controllers
         {
             int x = 25;
         }
+        public void test1()
+        {
+            int x = 125;
+        }
     }
 }
