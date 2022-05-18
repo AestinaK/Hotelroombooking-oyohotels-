@@ -10,7 +10,7 @@ namespace BBQ.Controllers
         }
         public void test()
         {
-            int x = 25;
+            int y = 20;
         }
         public void test1()
         {
