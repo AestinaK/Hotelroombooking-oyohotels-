@@ -1,0 +1,358 @@
+﻿@page
+@model BBQ.Views.Usproductdetails.IndexModel
+@{
+    Layout = "_Landing";
+}
+
+<div class="nk-content ">
+                <div class="container-fluid">
+                    <div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            <div class="nk-block-head nk-block-head-sm">
+                                <div class="nk-block-between g-3">
+                                    <div class="nk-block-head-content">
+                                        <h3 class="nk-block-title page-title">Hotel Details</h3>
+                                        <div class="nk-block-des text-soft">
+                                            <p>An ideal hotel for your vaccation</p>
+                                        </div>
+                                    </div>
+                                    <div class="nk-block-head-content">
+                                        <a href="html/product-list.html" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
+                                        <a href="html/product-list.html" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
+                                    </div>
+                                </div>
+                            </div><!-- .nk-block-head -->
+                            <div class="nk-block">
+                                <div class="card card-bordered">
+                                    <div class="card-inner">
+                                        <div class="row pb-5">
+                                            <div class="col-lg-6 col-xxl-5">
+                                                <div class="product-gallery me-xl-1 me-xxl-5">
+                                                    <div class="slider-init" id="sliderFor" data-slick='{"arrows": false, "fade": true, "asNavFor":"#sliderNav", "slidesToShow": 1, "slidesToScroll": 1}'>
+                                                        <div class="slider-item rounded">
+                                                            <img src="~/userside/images/product/hotel2.jpg" class="rounded w-100" alt="">
+                                                        </div>
+                                                        <div class="slider-item rounded">
+                                                            <img src="~/userside/images/product/hotel3.jpg" class="rounded w-100" alt="">
+                                                        </div>
+                                                        <div class="slider-item rounded">
+                                                            <img src="~/userside/images/product/hotel4.jpg" class="rounded w-100" alt="">
+                                                        </div>
+                                                        <div class="slider-item rounded">
+                                                            <img src="~/userside/images/product/hotel8.jpg" class="rounded w-100" alt="">
+                                                        </div>
+                                                        <div class="slider-item rounded">
+                                                            <img src="~/userside/images/product/hotel5.jpg" class="rounded w-100" alt="">
+                                                        </div>
+                                                    </div><!-- .slider-init -->
+                                                    <div class="slider-init slider-nav" id="sliderNav" data-slick='{"arrows": false, "slidesToShow": 5, "slidesToScroll": 1, "asNavFor":"#sliderFor", "centerMode":true, "focusOnSelect": true, 
+                                "responsive":[ {"breakpoint": 1539,"settings":{"slidesToShow": 4}}, {"breakpoint": 768,"settings":{"slidesToShow": 3}}, {"breakpoint": 420,"settings":{"slidesToShow": 2}} ]
+                            }'>
+                                                        <div class="slider-item">
+                                                            <div class="thumb">
+                                                                <img src="~/userside/images/product/hotel2.jpg" class="rounded" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slider-item">
+                                                            <div class="thumb">
+                                                                <img src="~/userside/images/product/hotel3.jpg" class="rounded" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slider-item">
+                                                            <div class="thumb">
+                                                                <img src="~/userside/images/product/hotel4.jpg" class="rounded" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slider-item">
+                                                            <div class="thumb">
+                                                                <img src="~/userside/images/product/hotel8.jpg" class="rounded" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slider-item">
+                                                            <div class="thumb">
+                                                                <img src="~/userside/images/product/hotel5.jpg" class="rounded" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- .slider-nav -->
+                                                </div><!-- .product-gallery -->
+                                            </div><!-- .col -->
+                                            <div class="col-lg-6 col-xxl-5">
+                                                <div class="product-info mt-5 me-xxl-5">
+                                                    <h4 class="product-price text-primary">$78.00 <small class="text-muted fs-14px">$98.00</small></h4>
+                                                    <h2 class="product-title">White Vintage Hotel</h2>
+                                                    <div class="product-rating">
+                                                        <ul class="rating">
+                                                            <li><em class="icon ni ni-star-fill"></em></li>
+                                                            <li><em class="icon ni ni-star-fill"></em></li>
+                                                            <li><em class="icon ni ni-star-fill"></em></li>
+                                                            <li><em class="icon ni ni-star-fill"></em></li>
+                                                            <li><em class="icon ni ni-star-half"></em></li>
+                                                        </ul>
+                                                        <div class="amount">(2 Reviews)</div>
+                                                    </div><!-- .product-rating -->
+                                                    <div class="product-excrept text-soft">
+                                                        <p class="lead">I must explain to you how all this mistaken idea of denoun cing ple praising pain was born and I will give you a complete account of the system, and expound the actual teaching.</p>
+                                                    </div>
+                                                    <div class="product-meta">
+                                                        <ul class="d-flex g-3 gx-5">
+                                                            <li>
+                                                                <div class="fs-14px text-muted">Type</div>
+                                                                <div class="fs-16px fw-bold text-secondary">Sweet Room</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="fs-14px text-muted">Room  Number</div>
+                                                                <div class="fs-16px fw-bold text-secondary"> 290XT</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                   @* <div class="product-meta">
+                                                        <h6 class="title">Color</h6>
+                                                        <ul class="custom-control-group">
+                                                            <li>
+                                                                <div class="custom-control color-control">
+                                                                    <input type="radio" class="custom-control-input" id="productColor1" name="productColor" checked>
+                                                                    <label class="custom-control-label dot dot-xl" data-bg="#754c24" for="productColor1"></label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control color-control">
+                                                                    <input type="radio" class="custom-control-input" id="productColor2" name="productColor">
+                                                                    <label class="custom-control-label dot dot-xl" data-bg="#636363" for="productColor2"></label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control color-control">
+                                                                    <input type="radio" class="custom-control-input" id="productColor3" name="productColor">
+                                                                    <label class="custom-control-label dot dot-xl" data-bg="#ba6ed4" for="productColor3"></label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control color-control">
+                                                                    <input type="radio" class="custom-control-input" id="productColor4" name="productColor">
+                                                                    <label class="custom-control-label dot dot-xl" data-bg="#ff87a3" for="productColor4"></label>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>*@
+                                                    @*<div class="product-meta">
+                                                        <h6 class="title">Size</h6>
+                                                        <ul class="custom-control-group">
+                                                            <li>
+                                                                <div class="custom-control custom-radio custom-control-pro no-control">
+                                                                    <input type="radio" class="custom-control-input" name="sizeCheck" id="sizeCheck1" checked>
+                                                                    <label class="custom-control-label" for="sizeCheck1">XS</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-radio custom-control-pro no-control">
+                                                                    <input type="radio" class="custom-control-input" name="sizeCheck" id="sizeCheck2">
+                                                                    <label class="custom-control-label" for="sizeCheck2">SM</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-radio custom-control-pro no-control">
+                                                                    <input type="radio" class="custom-control-input" name="sizeCheck" id="sizeCheck3">
+                                                                    <label class="custom-control-label" for="sizeCheck3">L</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-radio custom-control-pro no-control">
+                                                                    <input type="radio" class="custom-control-input" name="sizeCheck" id="sizeCheck4">
+                                                                    <label class="custom-control-label" for="sizeCheck4">XL</label>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>*@<!-- .product-meta -->
+                                                    <div class="product-meta">
+                                                        <ul class="d-flex flex-wrap ailgn-center g-2 pt-1">
+                                                            <li class="w-140px">
+                                                                <div class="form-control-wrap number-spinner-wrap">
+                                                                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
+                                                                    <input type="number" class="form-control number-spinner" value="0">
+                                                                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-primary">Book</button>
+                                                            </li>
+                                                            <li class="ms-n1">
+                                                                <button class="btn btn-icon btn-trigger text-primary"><em class="icon ni ni-heart"></em></button>
+                                                            </li>
+                                                        </ul>
+                                                    </div><!-- .product-meta -->
+                                                </div><!-- .product-info -->
+                                            </div><!-- .col -->
+                                        </div><!-- .row -->
+                                        <hr class="hr border-light">
+                                        <div class="row g-gs flex-lg-row-reverse justify-content-between pt-5">
+                                            <div class="col-lg-5 col-xxl-4">
+                                                <div class="video">
+                                                    <img class="video-poster w-100" src="./images/product/video-a.jpg" alt="">
+                                                    <a class="video-play popup-video" href="https://www.youtube.com/watch?v=SSo_EIwHSd4">
+                                                        <em class="icon ni ni-play"></em>
+                                                        <span>Watch Video</span>
+                                                    </a>
+                                                </div>
+                                            </div><!-- .col -->
+                                            <div class="col-lg-7">
+                                                <div class="product-details entry me-xxl-3 wide-md">
+                                                    <h3>Product details of Comfy cushions</h3>
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Neque porro quisquam est, qui dolorem consectetur, adipisci velit.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+                                                    <ul class="list list-sm list-checked">
+                                                        <li>Meets and/or exceeds performance standards.</li>
+                                                        <li>Liumbar support.</li>
+                                                        <li>Made of bonded teather and poiyurethane.</li>
+                                                        <li>Metal frame.</li>
+                                                        <li>Anatomically shaped cork-latex</li>
+                                                        <li>As attractively priced as you look attractive in one</li>
+                                                    </ul>
+                                                    <p>Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.</p>
+                                                    <h3>The best seats in the house</h3>
+                                                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings. Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.</p>
+                                                </div>
+                                            </div><!-- .col -->
+                                        </div><!-- .row -->
+                                    </div>
+                                </div>
+                            </div><!-- .nk-block -->
+                            <div class="nk-block nk-block-lg">
+                                <div class="nk-block-head">
+                                    <div class="nk-block-between g-3">
+                                        <div class="nk-block-head-content">
+                                            <h3 class="nk-block-title page-title">Releted Hotels </h3>
+                                        </div>
+                                    </div>
+                                </div><!-- .nk-block-head -->
+                                <div class="slider-init row" data-slick='{"slidesToShow": 4, "centerMode": false, "slidesToScroll": 1, "infinite":false, "responsive":[ {"breakpoint": 1540,"settings":{"slidesToShow": 3}},{"breakpoint": 992,"settings":{"slidesToShow": 2}}, {"breakpoint": 576,"settings":{"slidesToShow": 1}} ]}'>
+                                    <div class="col">
+                                        <div class="card card-bordered product-card">
+                                            <div class="product-thumb">
+                                                <a href="html/product-details.html">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel3.jpg" alt="">
+                                                </a>
+                                                <ul class="product-badges">
+                                                    <li><span class="badge bg-success">New</span></li>
+                                                </ul>
+                                                <ul class="product-actions">
+                                                    <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-heart"></em></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-inner text-center">
+                                                <ul class="product-tags">
+                                                    <li><a href="#">Birtamode</a></li>
+                                                </ul>
+                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">Everest Hotel & Loudge</a></h5>
+                                                <div class="product-price text-primary h5"><small class="text-muted del fs-13px">RS3500</small> RS2400</div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col">
+                                        <div class="card card-bordered product-card">
+                                            <div class="product-thumb">
+                                                <a href="html/product-details.html">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel2.jpg" alt="">
+                                                </a>
+                                                <ul class="product-actions">
+                                                    <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-heart"></em></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-inner text-center">
+                                                <ul class="product-tags">
+                                                    <li><a href="#">Surunga</a></li>
+                                                </ul>
+                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">White Vintage Hotel</a></h5>
+                                                <div class="product-price text-primary h5"><small class="text-muted del fs-13px">Rs 2090</small> RS 1900</div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col">
+                                        <div class="card card-bordered product-card">
+                                            <div class="product-thumb">
+                                                <a href="html/product-details.html">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel4.jpg" alt="">
+                                                </a>
+                                                <ul class="product-badges">
+                                                    <li><span class="badge bg-danger">Hot</span></li>
+                                                </ul>
+                                                <ul class="product-actions">
+                                                    <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-heart"></em></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-inner text-center">
+                                                <ul class="product-tags">
+                                                    <li><a href="#">Dhulabari</a></li>
+                                                </ul>
+                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">Black Mamba sweet house</a></h5>
+                                                <div class="product-price text-primary h5"><small class="text-muted del fs-13px">RS 2129</small> Rs 809</div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col">
+                                        <div class="card card-bordered product-card">
+                                            <div class="product-thumb">
+                                                <a href="html/product-details.html">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel3.jpg" alt="">
+                                                </a>
+                                                <ul class="product-actions">
+                                                    <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-heart"></em></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-inner text-center">
+                                                <ul class="product-tags">
+                                                    <li><a href="#">Birtamode</a></li>
+                                                </ul>
+                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">Modular Sweet House</a></h5>
+                                                <div class="product-price text-primary h5"><small class="text-muted del fs-13px">RS 1609</small> RS 1200</div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col">
+                                        <div class="card card-bordered product-card">
+                                            <div class="product-thumb">
+                                                <a href="html/product-details.html">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel4.jpg" alt="">
+                                                </a>
+                                                <ul class="product-actions">
+                                                    <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-heart"></em></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-inner text-center">
+                                                <ul class="product-tags">
+                                                    <li><a href="#">Chandragadi</a></li>
+                                                </ul>
+                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">Hotel Hicola Heritage</a></h5>
+                                                <div class="product-price text-primary h5"><small class="text-muted del fs-13px">RS 10009</small> RS 7800</div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col">
+                                        <div class="card card-bordered product-card">
+                                            <div class="product-thumb">
+                                                <a href="html/product-details.html">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel5.jpg" alt="">
+                                                </a>
+                                                <ul class="product-actions">
+                                                    <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-heart"></em></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-inner text-center">
+                                                <ul class="product-tags">
+                                                    <li><a href="#">Prithivnagar</a></li>
+                                                </ul>
+                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">Black king house </a></h5>
+                                                <div class="product-price text-primary h5">RS 3229</div>
+                                            </div>
+                                        </div>
+                                    </div><!-- .col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
