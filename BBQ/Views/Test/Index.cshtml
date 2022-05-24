@@ -148,7 +148,7 @@
                                                     </li>
                                                     <li class="nk-block-tools-opt">
                                                         <a href="#" data-target="addProduct" class="toggle btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                                        <a href="#" data-target="addProduct" class="toggle btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Product</span></a>
+                                                        <a href="#" data-target="addProduct" class="toggle btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Filter</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -170,19 +170,19 @@
                 <div class="card card-body">
                             <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
                                 <div class="mr-2 mb-3 mb-lg-0">
-                                    <a href="~/userside/html/product-details.html">
+                                    <a asp-controller="Test" asp-action="hoteldetails">
                                     <img  src="~/userside/images/product/hotel3.jpg" width="150" height="150" alt="">
                                    </a>
                                 </div>
 
                                 <div class="media-body">
                                     <h4 class="media-title font-weight-semibold">
-                                        <a href="#" data-abc="true">Hotel Nepali Bhumi</a>
+                                        <a asp-controller="Test" asp-action="hoteldetails" data-abc="true">Hotel Nepali Bhumi</a>
                                     </h4>
 
                                     <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
-                                        <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true">Kathmandu </a></li>
-                                        <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true">Thamel</a></li>
+                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">Kathmandu </a></li>
+                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">Thamel</a></li>
                                     </ul>
 
                                     
@@ -191,7 +191,7 @@
                                        
 
                                     <ul class="list-inline list-inline-dotted mb-0">
-                                        <li class="list-inline-item"> <p style="font-weight:bold"> Delux Double Room</p> </li>
+                                        <li class="list-inline-item"> <p asp-controller="Test" asp-action="hoteldetails"  style="font-weight:bold"> Delux Double Room</p> </li>
                                         <li class="list-inline-item"><p>1 full bed</p></li>
                                     </ul>
                                 </div>
@@ -210,7 +210,7 @@
 
                                     <div class="text-muted">1985 reviews</div>
 
-                                    <button type="button" class="btn btn-warning mt-4 text-white"><i class="icon-cart-add mr-2"></i> Add to cart</button>
+                                    <button asp-controller="Test" asp-action="hoteldetails" type="button" class="btn btn-warning mt-4 text-white"><i class="icon-cart-add mr-2"></i> Add to cart</button>
                                 </div>
                             </div>
                         </div>

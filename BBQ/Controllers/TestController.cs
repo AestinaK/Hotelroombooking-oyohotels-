@@ -8,5 +8,10 @@ namespace BBQ.Controllers
         {
             return View();
         }
+
+        public IActionResult hoteldetails()
+        {
+            return RedirectToAction("Index", "Usproductdetails");
+        }
     }
 }

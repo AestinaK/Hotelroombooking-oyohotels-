@@ -1,5 +1,7 @@
 ﻿@page
 @model BBQ.Views.Landing.IndexModel
+
+@using Microsoft.AspNetCore.Http
 @{
     Layout = "_Landing";
 }
@@ -126,8 +128,8 @@
                                                         <div class="col-lg-4 col-sm-6">
                                                             <div class="form-group">
                                                                 <div class="form-control-wrap">
-                                                                    
-                                                                    <a href="#" class="btn btn-xl btn-primary">Search</a>
+                                                                    "
+                                                                    <a  class="btn btn-xl btn-primary"  asp-controller="Landing" asp-action="search" >Search</a>
                                                                 </div>
                                                             </div>
                                                         </div>

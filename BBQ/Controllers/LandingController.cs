@@ -8,5 +8,12 @@ namespace BBQ.Controllers
         {
             return View();
         }
+
+
+        public IActionResult search()
+        {
+            
+            return RedirectToAction("Index", "Test");
+        }
     }
 }
