@@ -20,11 +20,11 @@
                                             <ul class="nk-block-tools g-3">
                                                 <li>
                                                     <div class="drodown">
-                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
+                                                        <a  class="dropdown-toggle btn btn-icon btn-primary" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                             <ul class="link-list-opt no-bdr">
-                                                                <li><a asp-controller="AdRoom" asp-action="AddRoomIndex" data-bs-toggle="modal" data-bs-target="#add-room"><span>Add Room</span></a></li>
-                                                                
+                                                              @*  <li><a data-bs-toggle="modal" data-bs-target="#add-room"><span>Add Room</span></a></li>*@
+                                                                <li > <a  class="btn btn-info btn-fw"  asp-controller="AdRoom" asp-action="AddRoomIndex"> <span>Add Room</span> </a> </li>
                                                             </ul>
                                                         </div>
                                                     </div>
