@@ -13,19 +13,29 @@ namespace BBQ.Controllers
         }
 
         [HttpPost]
-        public IActionResult insert(Ususerlogin vmodel)
+        public IActionResult Login(string email, string password)
         {
-            try
-            {
+            var userlist = dal.Ususerlogins.Where(X => X.email.Equals(email)).Where(X => X.password.Equals(password)).ToList();
 
-                dal.Ususerlogins.Add(vmodel);
-                dal.SaveChanges();
-            }
-            catch (Exception e)
+            if (userlist.Count() == 1 && userlist[0].email.Equals(email) && userlist[0].password.Equals(password) && userlist[0].role.Equals("user"))
+
             {
-                Console.WriteLine(e);
+                return Redirect("/Landing/Index");
             }
-            return Redirect("/Landing/Index");
+
+            else if (userlist.Count() == 1 && userlist[0].email.Equals(email) && userlist[0].password.Equals(password) && userlist[0].role.Equals("admin"))
+
+            {
+                return Redirect("/AdDash1/Dash1Index");
+            }
+            else
+            {
+                return Redirect("/Ususerlogin/Index");
+
+            }
+
+
+
 
         }
     }

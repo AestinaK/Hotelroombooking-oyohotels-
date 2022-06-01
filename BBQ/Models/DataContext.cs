@@ -30,7 +30,9 @@ namespace BBQ.Models
 	
 
 		public DbSet<Ususerlogin> Ususerlogins { get; set; }
-  
+
+		public DbSet<Roomdetails> roomdetails { get; set; }
+		
         //need to register your model here 
         //public Dbset<product> Products{get;set;}
 
