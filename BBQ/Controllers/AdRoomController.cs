@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BBQ.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BBQ.Controllers
 {
     public class AdRoomController : Controller
     {
+
+       /* DataContext dal = new DataContext();*/
         public IActionResult RoomIndex()
 
         {
@@ -17,6 +20,23 @@ namespace BBQ.Controllers
         {
             return View();
         }
+        /*[HttpPost]
+        public IActionResult Insert(AdRoom vmodel)
+        {
+            
+
+                dal.AdRooms.Add(vmodel);
+                dal.SaveChanges();
+            
+            return RedirectToAction("AddRoomIndex","AdRoom");
+
+        }*/
+
+
+
+
+
+
         //for facilities and services
 
         public IActionResult FacilitiesIndex()
@@ -41,6 +61,20 @@ namespace BBQ.Controllers
 
 
 
+        public IActionResult RoomTypeIndex()
+        {
+            return View();
+        }
+
+
+        //for direction
+        public IActionResult DirIndex()
+        {
+            return View();
+        }
+
+
 
     }
 }
+

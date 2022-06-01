@@ -24,6 +24,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=AdDash1}/{action=Dash1Index}/{id?}");
+    pattern: "{controller=AdRoom}/{action=RoomIndex}/{id?}");
 
 app.Run();
