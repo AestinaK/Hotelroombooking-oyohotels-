@@ -68,7 +68,7 @@
                                     </ul>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item has-sub">
-                                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <a  class="nk-menu-link nk-menu-toggle" asp-area="" asp-controller="AdRoom" asp-action="RoomIndex">
                                         <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></span>
                                         <span class="nk-menu-text">Property</span>
                                     </a>
@@ -80,7 +80,7 @@
                                             <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">Room Details</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">Facilities & Services</span></a>
+                                            <a asp-area="" asp-controller="AdRoom" asp-action="FacilitiesIndex" class="nk-menu-link"><span class="nk-menu-text">Facilities & Services</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">Room Amenities</span></a>
@@ -1067,6 +1067,7 @@
     <script src="./assets/js/bundle.js?ver=3.0.0"></script>
     <script src="./assets/js/scripts.js?ver=3.0.0"></script>
     <script src="./assets/js/charts/chart-hotel.js?ver=3.0.0"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

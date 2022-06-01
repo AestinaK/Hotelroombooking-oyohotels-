@@ -30,14 +30,14 @@ namespace BBQ.Models
 	
 
 		public DbSet<Ususerlogin> Ususerlogins { get; set; }
+		public DbSet<AdRoom> AdRooms{ get; set; }
 
-		public DbSet<Roomdetails> roomdetails { get; set; }
-		
-        //need to register your model here 
-        //public Dbset<product> Products{get;set;}
 
-        //public DbSet<AdminRegister> AdminRegisters { get; set; }
-        /*public DbSet<library> libraries { get; set; }
+		//need to register your model here 
+		//public Dbset<product> Products{get;set;}
+
+		//public DbSet<AdminRegister> AdminRegisters { get; set; }
+		/*public DbSet<library> libraries { get; set; }
 
 		public DbSet<userlogin> userlogins { get; set; }
 		public DbSet<Administratorregisters> Administratorregisters { get; set; }
@@ -57,5 +57,5 @@ namespace BBQ.Models
 		public DbSet<Notice> notices { get; set; }*/
 
 
-    }
+	}
 }
