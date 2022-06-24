@@ -102,6 +102,9 @@ StyleCopReport.xml
 _Chutzpah*
 
 # Visual C++ cache files
+
+
+.idea/
 ipch/
 *.aps
 *.ncb
