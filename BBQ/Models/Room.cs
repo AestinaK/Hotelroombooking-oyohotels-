@@ -8,10 +8,8 @@ namespace BBQ.Models
     {
         [Key]
         public int rid { get; set; }
-        public int rtid { get; set; }
+        public int hid { get; set; }
         public int roomno { get; set; }
-
-
-
+        public int rtid { get; set; }
     }
 }

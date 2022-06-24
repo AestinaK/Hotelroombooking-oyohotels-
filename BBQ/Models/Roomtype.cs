@@ -9,9 +9,6 @@ namespace BBQ.Models
     {
         [Key]
         public int rtid { get; set; }
-        public int hid { get; set; }
         public string type { get; set; }
-        public string  des { get; set; }
-        public int price { get; set; }
     }
 }
