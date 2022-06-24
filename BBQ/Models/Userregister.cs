@@ -3,13 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BBQ.Models
 {
-    [Table("logintable")]
-    public class Ususerlogin
+
+
+    [Table("user")]
+    public class Userregister
     {
         [Key]
-        public int id{ get; set;}
-        public string? email { get; set;}
+        public int uid { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
         public string password { get; set; }
-        public string role { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿@page
-@model BBQ.Views.Landing.IndexModel
+﻿
 
 @using Microsoft.AspNetCore.Http
 @{
@@ -60,7 +59,7 @@
                         <div class="row justify-content-center" >
                             <div class="col-xl-10">
                                 <div class="card overflow-hidden p-2 bg-light" >
-                                     <form method="post" asp-controller="Landing" asp-action="Search">
+                                     <form method="post" asp-controller="Test" asp-action="Index">
                                    <div class="row gy-4">
                                
 
@@ -80,7 +79,7 @@
                                                                     <div class="form-icon form-icon-right xl">
                                                                         <em class="icon ni ni-search"></em>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-xl form-control-outlined"  id="outlined-right-icon" >
+                                                                    <input type="text" class="form-control form-control-xl form-control-outlined" name="address" id="address" >
                                                                     <label class="form-label-outlined" for="outlined-right-icon">Where are you going?</label>
                                                                 </div>
                                                             </div>
@@ -92,7 +91,7 @@
                                                                     <div class="form-icon form-icon-right xl">
                                                                         <em class="icon ni ni-calendar-alt"></em>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker" id="outlined-date-picker">
+                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker"  name="start" id="outlined-date-picker">
                                                                     <label class="form-label-outlined" for="outlined-date-picker">Check In</label>
                                                                 </div>
                                                             </div>
@@ -105,7 +104,7 @@
                                                                     <div class="form-icon form-icon-right xl">
                                                                         <em class="icon ni ni-calendar-alt"></em>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker" id="outlined-date-picker">
+                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker" name="end" id="outlined-date-picker">
                                                                     <label class="form-label-outlined" for="outlined-date-picker">Check Out</label>
                                                                 </div>
                                                             </div>
@@ -116,12 +115,12 @@
                                                           <div class="col-lg-4 col-sm-6">
                                                             <div class="form-group">
                                                                 <div class="form-control-wrap">
-                                                                    <select class="form-select js-select2" data-ui="xl" id="outlined-select">
-                                                                        <option value="default_option">1</option>
-                                                                        <option value="option_select_name">2</option>
-                                                                        <option value="option_select_name">3</option>
-                                                                        <option value="option_select_name">4</option>
-                                                                        <option value="option_select_name">5</option>
+                                                                    <select name="noofroom" class="form-select js-select2" data-ui="xl" id="outlined-select">
+                                                                        <option >1</option>
+                                                                        <option >2</option>
+                                                                        <option >3</option>
+                                                                        <option >4</option>
+                                                                        <option >5</option>
                                                                     </select>
                                                                     <label class="form-label-outlined" for="outlined-select">Number of Rooms </label>
                                                                 </div>
@@ -131,8 +130,9 @@
                                                         <div class="col-lg-4 col-sm-6">
                                                             <div class="form-group">
                                                                 <div class="form-control-wrap">
-                                                                    "
-                                                                    <a  class="btn btn-xl btn-primary"  asp-controller="Landing" asp-action="search" >Search</a>
+                                                                    
+                                                                   @* <a type="submit" class="btn btn-xl btn-primary"   >Search</a>*@
+                                                                   <input type="submit" onclick="return userValid(); " value="search" class="btn btn-xl btn-primary"/>                                 
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -968,8 +968,8 @@
     </div>
     <!-- app-root e -->
     <!-- JavaScript -->
-    <script src="./landingfile/assets/js/bundle.js?ver=3.0.0"></script>
-    <script src="./landingfile/assets/js/scripts.js?ver=3.0.0"></script>
+   <script src="~/landingfile/assets/js/bundle.js?ver=3.0.0"></script>
+     <script src="~/landingfile/assets/js/scripts.js?ver=3.0.0"></script>
 
     
 </body>

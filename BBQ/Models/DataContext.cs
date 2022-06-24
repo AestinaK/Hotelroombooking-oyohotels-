@@ -30,7 +30,19 @@ namespace BBQ.Models
 	
 
 		public DbSet<Ususerlogin> Ususerlogins { get; set; }
-		public DbSet<AdRoom> AdRooms{ get; set; }
+
+		
+
+		public DbSet<Hotels> Hotelss { get; set; }
+		public DbSet<Roomtype> Roomtypes { get; set; }
+		public DbSet<Room> Rooms { get; set; }
+		public DbSet<Roomreservation> Roomreservations { get; set; }
+		public DbSet<Features> Featuress { get; set; }
+		public DbSet<Hotelfeatures> Hotelfeaturess { get; set; }
+
+		public DbSet<Userregister> Userregisters { get; set; }
+
+		
 
 
 		//need to register your model here 
