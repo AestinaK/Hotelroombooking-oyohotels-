@@ -16,9 +16,11 @@ namespace BBQ.Controllers
         [HttpPost]
         public IActionResult Index(Hotelsearchviewmodel vm)
         {
+           var sstart = vm.start.ToString();
+            var eend = vm.end.ToString();
             ViewBag.address = vm.address;
-            ViewBag.checkin = vm.start;
-            ViewBag.checkout = vm.end;
+            ViewBag.checkin = sstart;
+            ViewBag.checkout = eend;
             ViewBag.noofroom = vm.noofrooms;
 
             var start = DateOnly.Parse(vm.start);
@@ -27,14 +29,14 @@ namespace BBQ.Controllers
 
             var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
             var available_rooms = dal.Rooms.Where(x => !booked_rooms.Contains(x.rid)).ToList();
-            var roomHotelGroup = available_rooms.GroupBy(x => x.hid);
+            var roomHotelGroup = available_rooms.GroupBy(x => x.hid); 
             var hotelIds = roomHotelGroup.Where(x => x.Count() >= vm.noofrooms).Select(z => z.Key).ToList();
             
             var hotels = dal.Hotelss.Where(a => a.address==vm.address).Where(x => hotelIds.Contains(x.hid)).ToList();
-           // var price = dal.Prices.Where(x => hotelsss.Contains(x.hid)).ToList();            
-            ViewBag.datas = hotels;
+/*             var price = dal.Prices.Where(a => a.rtid == 1).Where(x => hotels.Contains(x.hid)).ToList();            
+*/            ViewBag.datas = hotels;
 
-            testMethod(vm);
+            
 
             return View();
         }
@@ -43,10 +45,10 @@ namespace BBQ.Controllers
         [HttpPost]
         public IActionResult testMethod(Hotelsearchviewmodel vm)
         {
-            
-            ViewBag.checkin = vm.start;
-            ViewBag.checkout = vm.end;
-            ViewBag.noofroom = vm.noofrooms;
+
+            ViewBag.start = vm.start;
+            ViewBag.end = vm.end;
+            ViewBag.noofrooms = vm.noofrooms;
 
             var start = DateOnly.Parse(vm.start);
             var end = DateOnly.Parse(vm.end);
@@ -60,13 +62,13 @@ namespace BBQ.Controllers
             //mailay ajha thapay ko 
             var grouptype = roomTypeGroup.Where(x => x.Count() >= vm.noofrooms).ToList();
 
-            var grouptypekey = grouptype.Select(z => z.Key).ToList();
-            var details=dal.Roomtypes.Where(x => grouptypekey.Contains(x.rtid)).ToList();
+             var grouptypekey = grouptype.Select(z => z.Key).ToList();
+            var details = dal.Roomtypes.Where(x => grouptypekey.Contains(x.rtid)).ToList();
             var price = dal.Prices.Where(b => b.hid == hotelID).Where(x => grouptypekey.Contains(x.rtid));
 
             //  var roomtypeid=grouptype.Select rtid 
 
-            ViewBag.datas = roomTypeGroup;
+            ViewBag.datass = roomTypeGroup;
             return View();
         }
 
