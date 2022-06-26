@@ -14,6 +14,7 @@ namespace BBQ.Controllers
             var start = DateOnly.Parse(sstart);
             var end = DateOnly.Parse(eend);
 
+            ViewBag.rooms = noofrooms;
 
              var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
             var available_rooms = dal.Rooms.Where(a => a.hid == hid).Where(x => !booked_rooms.Contains(x.rid)).ToList();
@@ -28,7 +29,7 @@ namespace BBQ.Controllers
 
             //  var roomtypeid=grouptype.Select rtid 
 
-            ViewBag.datass = roomTypeGroup;
+            ViewBag.typess = details;
             ViewBag.price = price; 
 
             return View();

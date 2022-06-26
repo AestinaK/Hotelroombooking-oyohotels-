@@ -4,6 +4,14 @@
     Layout = "_Landing";
 }
 
+<link rel="stylesheet" type="text/css" href="./assets/css/libs/fontawesome-icons.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<link rel="stylesheet" type="text/css" href="./assets/css/libs/bootstrap-icons.css"> 
+<link rel="stylesheet" href="~/searchbox/site.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
 <div class="nk-content ">
                 <div class="container-fluid">
                     <div class="nk-content-inner">
@@ -215,6 +223,137 @@
                                     </div>
                                 </div>
                             </div><!-- .nk-block -->
+
+
+
+                            <div class="nk-block">
+                                <div class="row g-gs">
+     <div class="container d-flex justify-content-center mt-50 mb-50">
+            
+        <div class="row">
+           <div class="col-md-12">
+
+               @foreach(var item in ViewBag.typess){
+
+                            <div class="card card-body">
+                            <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                                <div class="mr-2 mb-3 mb-lg-0">
+                                    <a asp-controller="Test" asp-action="hoteldetails">
+                                    <img  src="~/userside/images/product/hotel3.jpg" width="150" height="150" alt="">
+                                   </a>
+                                </div>
+
+                                <div class="media-body">
+                                    <h4 class="media-title font-weight-semibold">
+                                        <a asp-controller="Test" asp-action="hoteldetails" data-abc="true">@item.type</a>
+                                    </h4>
+
+                                    <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
+                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">birtamode </a></li>
+                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">Thamel</a></li>
+                                    </ul>
+
+                                    
+                                    <p class="mb-3"> <em class="bi bi-arrow-right"></em> free wifi <em class="bi bi-arrow-right"></em> TEst <em class="bi bi-arrow-right"></em> free wifi </p>
+                                   
+                                       
+
+                                    <ul class="list-inline list-inline-dotted mb-0">
+                                        <li class="list-inline-item"> <p asp-controller="Test" asp-action="hoteldetails"  style="font-weight:bold"> Classic</p> </li>
+                                        <li class="list-inline-item"><p>1 full bed</p></li>
+                                    </ul>
+                                </div>
+
+                                <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
+                                                    @foreach(var p in ViewBag.price)
+                                                    {
+                                                        if(@p.rtid==@item.rtid){
+                                                         <h3 class="mb-0 font-weight-semibold">@(@p.price * @ViewBag.rooms)</h3>
+                                                    }
+                                                    }
+                                                    <h3 class="mb-0 font-weight-semibold">RS 2000</h3>
+
+                                    <div>
+                                        <i class="icon ni ni-star-fill"></i>
+                                        <i class="icon ni ni-star-fill"></i>
+                                        <i class="icon ni ni-star-fill"></i>
+                                        <i class="icon ni ni-star-fill"></i>
+
+
+                                    </div>
+
+                                    <div class="text-muted">1985 reviews</div>
+
+
+                                    <a asp-controller="Usproductdetails" asp-action="Index"  class="btn btn-warning mt-4 text-white">UPDATE</a>
+                                    
+                                   @* <input type="submit" asp-controller="Usproductdetails" asp-action=" hoteldetails" asp-route-roomid="@item.hid"  onclick="return userValid(); " value="View Details" class="btn btn-xl btn-primary"/> 
+                                   
+                                     <button asp-controller="Usproductdetails" asp-action=" hoteldetails" asp-route-roomid="@item.hid"  type="button" class="btn btn-warning mt-4 text-white"><i class="icon-cart-add mr-2"></i> View details   </button>
+                               
+                                 *@
+                                 </div>
+                            </div>
+                        </div>
+
+                        }
+
+
+                        <div class="card card-body mt-3">
+                            <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                                <div class="mr-2 mb-3 mb-lg-0">
+                                    
+                                       @* <img src="https://i.imgur.com/Aj0L4Wa.jpg" width="150" height="150" alt="">*@
+                                   
+                                </div>
+
+                               <div class="media-body">
+                                    <h6 class="media-title font-weight-semibold">
+                                        @*<a href="#" data-abc="true">Apple iPhone XS Max (Gold, 64 GB)</a>*@
+                                    </h6>
+
+                                    <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
+                                       @* <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true">Phones</a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true">Mobiles</a></li>*@
+                                    </ul>
+
+                                    <p class="mb-3">256 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 15MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display </p>
+
+                                    <ul class="list-inline list-inline-dotted mb-0">
+                                       @* <li class="list-inline-item">All items from <a href="#" data-abc="true">Mobile junction</a></li>
+                                        <li class="list-inline-item">Add to <a href="#" data-abc="true">wishlist</a></li>*@
+                                    </ul>
+                                </div>
+
+                                <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
+                                    @*<h3 class="mb-0 font-weight-semibold">$612.99</h3>*@
+
+                                    <div>
+                                       @* <i class="icon ni ni-star-fill"></i>
+                                        <i class="icon ni ni-star-fill"></i>
+                                         <i class="icon ni ni-star-fill"></i>
+                                        <i class="icon ni ni-star-fill"></i>*@
+
+
+                                    </div>
+
+                                    <div class="text-muted"> </div>
+
+                                   
+                                </div>
+                            </div>
+                        </div> 
+
+
+
+
+                        </div>                     
+                    </div>
+                    </div>
+                    </div>
+                     </div>
+
+
                             <div class="nk-block nk-block-lg">
                                 <div class="nk-block-head">
                                     <div class="nk-block-between g-3">

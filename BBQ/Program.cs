@@ -1,20 +1,43 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+//session start 1
 
+//session end 1
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//session part start
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
+});
+//end
+//using json file
+builder.Services.AddMvc();
+
+/*builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ));*/
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
+    //session start 2
+    
+    //session end 2
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -24,6 +47,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=AdRoom}/{action=RoomIndex}/{id?}");
+    pattern: "{controller=Ususerlogin}/{action=Index}/{id?}");
 
 app.Run();

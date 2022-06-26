@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
 
 <html>
 
@@ -241,8 +242,11 @@
                                                     <em class="icon ni ni-user-alt"></em>
                                                 </div>
                                                 <div class="user-info d-none d-md-block">
-                                                    <div class="user-status">Administrator</div>
-                                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                                     @{var hname = Context.Session.GetString("hname"); }
+                                                     @{var role = Context.Session.GetString("role"); }
+                                                     @{var email = Context.Session.GetString("email"); }
+                                                    <div class="user-status">@role</div>
+                                                    <div class="user-name dropdown-indicator">@email</div>
                                                 </div>
                                             </div>
                                         </a>
