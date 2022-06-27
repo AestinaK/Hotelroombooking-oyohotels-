@@ -159,6 +159,7 @@
                                                 </div><!-- .card-search -->
                                             </div><!-- .card-inner -->
                                             <div class="card-inner p-0">
+                                                
                                                 <div class="nk-tb-list nk-tb-ulist">
                                                     <div class="nk-tb-item nk-tb-head">
                                                         <div class="nk-tb-col nk-tb-col-check">
@@ -167,17 +168,23 @@
                                                                 <label class="custom-control-label" for="uid"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Room ID</span></div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Hotel ID</span></div>
+                                                        <div class="nk-tb-col"><span class="sub-text">Room No</span></div>
+                                                        <div class="nk-tb-col"><span class="sub-text">Hotel Id</span></div>
 
-                                                        
+                                         
                                                         <div class="nk-tb-col"><span class="sub-text">Room Type</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Room Info</span></div>
+                                                       
+                                                        
+                                                        
+                                                        @* 
+                                                           
+                                                       
+                                                       <div class="nk-tb-col tb-col-md"><span class="sub-text">Room Info</span></div>
                                                         
                                                         
                                                         <div class="nk-tb-col tb-col-lg"><span class="sub-text">Bed Capacity</span></div>
                                                         <div class="nk-tb-col tb-col-mb"><span class="sub-text">Rent</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
+                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>*@
                                                         @*<div class="nk-tb-col nk-tb-col-tools text-end">
                                                             <div class="dropdown">
                                                                 <a href="#" class="btn btn-xs btn-outline-light btn-icon dropdown-toggle" data-bs-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-plus"></em></a>
@@ -206,35 +213,28 @@
                                                             </div>
                                                         </div>*@
                                                     </div><!-- .nk-tb-item -->
+                                                    @foreach(var d in ViewBag.rooms){
                                                     <div class="nk-tb-item">
+
+                   
                                                         <div class="nk-tb-col nk-tb-col-check">
-                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                                <input type="checkbox" class="custom-control-input" id="uid1">
-                                                                <label class="custom-control-label" for="uid1"></label>
+                                                          <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                            <input type="checkbox" class="custom-control-input" id="uid1">
+                                                             <label class="custom-control-label" for="uid1"></label>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="text-primary">101</span>
+                                                            <span class="text-primary">@d.roomno</span>
                                                         </div>
+                                                        @foreach(var f in ViewBag.roomtypess){
+                                                            if(@d.rtid==@f.rtid){
                                                         <div class="nk-tb-col">
-                                                            <span class="text-primary">101</span>
+                                                            <span class="text-primary">@f.type</span>
                                                         </div>
+                                                        }
+                                                        }
                                                         
-                                                        <div class="nk-tb-col">
-                                                            <span>Single <span class="dot dot-primary d-md-none ms-1"></span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span>Terrace,Attach Bathroom..</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">1 </span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">RS.32.00 </span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-primary">Booked</span>
-                                                        </div>
+                                                        
                                                         @*<div class="nk-tb-col tb-col-lg">
                                                             <span>1</span>
                                                         </div>*@
@@ -256,7 +256,11 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
+                                                    
                                                     </div><!-- .nk-tb-item  -->
+
+                                                    }
+
                                                     @*<div class="nk-tb-item">
                                                         <div class="nk-tb-col nk-tb-col-check">
                                                             <div class="custom-control custom-control-sm custom-checkbox notext">

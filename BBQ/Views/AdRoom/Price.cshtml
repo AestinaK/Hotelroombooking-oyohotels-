@@ -1,25 +1,23 @@
 ﻿@using Microsoft.AspNetCore.Http;
+
 @{
     Layout = "_AdminLayout";
 }
-
-
-                                                   
-                <div class="nk-content ">
+         <div class="nk-content ">
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
                                 <div class="components-preview wide-md mx-auto">
                                     <div class="nk-block-head nk-block-head-lg wide-sm">
                                         
-                                            <h2 class="nk-block-title fw-normal">Add Room</h2>
+                                            <h2 class="nk-block-title fw-normal">Price</h2>
                                             
                                         </div>
 
                                         @{var hname = Context.Session.GetString("hname"); }
                                         
                                     </div><!-- .nk-block-head -->
-                                  <form asp-controller="AdRoom" asp-action="Insert">
+                                  <form asp-controller="AdRoom" asp-action="Pricein">
                                     <div class="nk-block nk-block-lg">
                                         
                                         <div class="card card-bordered card-preview">
@@ -30,10 +28,10 @@
                                                         
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
-                                                                <label class="form-label" for="default-05">Room NO.</label>
+                                                                <label class="form-label" for="default-05">Hotel Id.</label>
                                                                 <div class="form-control-wrap">
                                                                     
-                                                                    <input type="text" class="form-control" name="roomno" id="default-05" placeholder="enter room number">
+                                                                    <input type="text" class="form-control" name="price" id="default-05" placeholder="enter room price ">
                                                                     <input type="hidden" id="hname" name="hname" value="@hname">
                                                                 </div>
                                                             </div>
@@ -344,5 +342,3 @@
                 </div>
                 </div>
                 </div>
-
-

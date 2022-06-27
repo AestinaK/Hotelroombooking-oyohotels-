@@ -1,36 +1,47 @@
 ﻿using BBQ.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace BBQ.Controllers
 {
     public class AdRoomController : Controller
     {
 
+
         DataContext dal = new DataContext();
-        public IActionResult RoomIndex()
+        public IActionResult RoomIndex(string hname)
 
         {
+            var hotel = dal.Hotelss.Where(x => x.name == hname).ToList();
+            var hid = hotel[0].hid;
+
+            var rooms = dal.Rooms.Where(x => x.hid == hid).ToList();
+           // var roomt = rooms[0].rtid;
+
+            var roomtyp = dal.Roomtypes.ToList();
+
+            ViewBag.rooms = rooms;
+            ViewBag.roomtypess = roomtyp;
+            
             return View();
         }
 
         //for adding room
         public IActionResult AddRoomIndex()
         {
-            var roomtype = dal.Roomtypes.ToList();
-            ViewBag.roomtype = roomtype;
-
+            var types = dal.Roomtypes.ToList();
+            ViewBag.types = types;
             return View();
-        }
-       /* public IActionResult AddRoomIndex()
-        {
-            var hotels = dal.Hotelss.ToList();
-            ViewBag.hotels = hotels;
 
-            return View();
+           
         }
-*/
 
-        [HttpPost]
+
+
+
+       
+
+      [HttpPost]
         public IActionResult Insert(Addroomvm vm)
         {
             var roomtype = vm.typename;
@@ -68,11 +79,22 @@ namespace BBQ.Controllers
 
 
             return RedirectToAction("AddRoomIndex", "AdRoom");
-
+            
         }
 
 
+        public IActionResult RoomTypeIndex()
+        {
+            var types = dal.Roomtypes.ToList();
+            ViewBag.types = types;
+            return View();
+        }
 
+        public IActionResult AddRoomTypeIndex()
+        {
+
+            return View();
+        }
 
 
 
@@ -85,6 +107,39 @@ namespace BBQ.Controllers
         {
             return View();
         }
+
+
+
+
+
+        public IActionResult Price()
+        {
+            /*
+            var hotel = dal.Hotelss.Where(x => x.name == hname).ToList();
+            var hid = hotel[0].hid;
+
+            var rooms = dal.Rooms.Where(x => x.hid == hid).ToList();*/
+
+
+            var roomtyp = dal.Roomtypes.ToList();
+
+         
+            ViewBag.roomtypess = roomtyp;
+
+
+
+
+            return View();
+        }
+        public IActionResult  Pricein()
+        { 
+          
+        
+        
+          return View();
+        
+        }
+
 
         //for amenities
         public IActionResult AmenitiesIndex()
@@ -100,18 +155,7 @@ namespace BBQ.Controllers
 
 
 
-        public IActionResult RoomTypeIndex()
-        {
-            var types = dal.Roomtypes.ToList();
-            ViewBag.types = types;
-            return View();
-        }
-
-        public IActionResult AddRoomTypeIndex()
-        {
-            
-            return View();
-        }
+        
 
 
 

@@ -67,33 +67,44 @@
                                             <a href="html/hotel/booking-edit.html" class="nk-menu-link"><span class="nk-menu-text">Edit Booking</span></a>
                                         </li>
                                     </ul>
+
+                                     @{var hname = Context.Session.GetString("hname"); }
+                                                     @{var role = Context.Session.GetString("role"); }
+                                                     @{var email = Context.Session.GetString("email"); }
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item has-sub">
-                                    <a  class="nk-menu-link nk-menu-toggle" asp-area="" asp-controller="AdRoom" asp-action="RoomIndex">
+                                    <a  class="nk-menu-link nk-menu-toggle" asp-area="" >
                                         <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></span>
                                         <span class="nk-menu-text">Property</span>
                                     </a>
+
+                                                     
+                                                   
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/room-list.html" class="nk-menu-link"><span class="nk-menu-text">General Info</span></a>
+                                            <a  class="nk-menu-link"><span class="nk-menu-text">General Info</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">Room Details</span></a>
+                                            <a asp-controller="AdRoom" asp-route-hname="@hname" asp-action="RoomIndex" class="nk-menu-link"><span class="nk-menu-text">Room Details</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a asp-area="" asp-controller="AdRoom" asp-action="FacilitiesIndex" class="nk-menu-link"><span class="nk-menu-text">Facilities & Services</span></a>
                                         </li>
+
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">Room Amenities</span></a>
+                                            <a asp-area="" asp-controller="AdRoom" asp-action="Price" class="nk-menu-link"><span class="nk-menu-text">Price</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">Locality(What's nearby?)</span></a>
+                                            <a  class="nk-menu-link"><span class="nk-menu-text">Room Amenities</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">How to get to 'hotel_name'</span></a>
+                                            <a  class="nk-menu-link"><span class="nk-menu-text">Locality(What's nearby?)</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/hotel/room-type.html" class="nk-menu-link"><span class="nk-menu-text">View Your Descriptions</span></a>
+                                            <a  class="nk-menu-link"><span class="nk-menu-text">How to get to 'hotel_name'</span></a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a  class="nk-menu-link"><span class="nk-menu-text">View Your Descriptions</span></a>
                                         </li>
                                     </ul>
                                 </li><!-- .nk-menu-item -->
@@ -242,10 +253,7 @@
                                                     <em class="icon ni ni-user-alt"></em>
                                                 </div>
                                                 <div class="user-info d-none d-md-block">
-                                                     @{var hname = Context.Session.GetString("hname"); }
-                                                     @{var role = Context.Session.GetString("role"); }
-                                                     @{var email = Context.Session.GetString("email"); }
-                                                    <div class="user-status">@role</div>
+                                                     <div class="user-status">@role</div>
                                                     <div class="user-name dropdown-indicator">@email</div>
                                                 </div>
                                             </div>
