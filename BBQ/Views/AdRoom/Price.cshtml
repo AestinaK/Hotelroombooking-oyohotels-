@@ -28,11 +28,16 @@
                                                         
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
-                                                                <label class="form-label" for="default-05">Hotel Id.</label>
+                                                                <label class="form-label" for="default-05">Hotel Name</label>
                                                                 <div class="form-control-wrap">
                                                                     
-                                                                    <input type="text" class="form-control" name="price" id="default-05" placeholder="enter room price ">
+                                                                    @*<input type="text" class="form-control" name="price" id="default-05">*@
                                                                     <input type="hidden" id="hname" name="hname" value="@hname">
+                                                                     @foreach (var d in ViewBag.names)
+                                                        {
+                                                            <option>@d.name</option>
+                                                            
+                                                        }
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -42,7 +47,7 @@
                                                         
                                                         
 
-                                                        <div class="form-group">
+                                                            <div class="form-group">
                                                                 <label class="form-label" for="default-06">Room Type</label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
@@ -58,6 +63,19 @@
                                                             </div>
 
 
+
+
+                                                             <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-05">Price</label>
+                                                                <div class="form-control-wrap">
+                                                                    
+                                                                    @*<input type="text" class="form-control" name="price" id="default-05">*@
+                                                                    <input type="text"  value="price">
+                                                                     
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
 
                                                        

@@ -17,7 +17,7 @@
                                         @{var hname = Context.Session.GetString("hname"); }
                                         
                                     </div><!-- .nk-block-head -->
-                                  <form asp-controller="AdRoom" asp-action="Pricein">
+                                  <form method="post" asp-controller="Priceadd" asp-action="Addprice">
                                     <div class="nk-block nk-block-lg">
                                         
                                         <div class="card card-bordered card-preview">
@@ -28,7 +28,7 @@
                                                         
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
-                                                                <label class="form-label" for="default-05">Hotel Id.</label>
+                                                                <label class="form-label" for="default-05">Price</label>
                                                                 <div class="form-control-wrap">
                                                                     
                                                                     <input type="text" class="form-control" name="price" id="default-05" placeholder="enter room price ">
@@ -46,7 +46,7 @@
                                                                 <label class="form-label" for="default-06">Room Type</label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
-                                                                        <select class="form-control"  name="typename" id="default-06">
+                                                                        <select class="form-control"  name="roomtype" id="default-06">
                                                         @foreach (var d in ViewBag.types)
                                                         {
                                                             <option>@d.type</option>
@@ -332,10 +332,11 @@
                             </div>
                         </div>
                     </div>
-                    <input type="submit"  value= "Add Room" class="btn btn-primary"/>
+                    <input type="submit" value= "Add Room" class="btn btn-primary"/>
                  
                    
                     <input type="submit" value="Cancel" class="btn btn-danger"/>
+
                    </form>
                 
                 </div>
