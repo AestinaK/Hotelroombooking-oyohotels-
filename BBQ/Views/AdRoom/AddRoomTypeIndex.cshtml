@@ -1,10 +1,9 @@
-﻿@using Microsoft.AspNetCore.Http;
+﻿@page
+@model BBQ.Views.AdRoom.AddRoomTypeIndexModel
+
 @{
     Layout = "_AdminLayout";
 }
-
-
-                                                   
                 <div class="nk-content ">
                     <div class="container-fluid">
                         <div class="nk-content-inner">
@@ -12,14 +11,12 @@
                                 <div class="components-preview wide-md mx-auto">
                                     <div class="nk-block-head nk-block-head-lg wide-sm">
                                         
-                                            <h2 class="nk-block-title fw-normal">Add Room</h2>
+                                            <h2 class="nk-block-title fw-normal">Add Room Type</h2>
                                             
                                         </div>
-
-                                        @{var hname = Context.Session.GetString("hname"); }
-                                        
                                     </div><!-- .nk-block-head -->
-                                  <form asp-controller="AdRoom" asp-action="Insert">
+                                    
+                                  <form method="post" asp-controller="AdRoom" asp-action="TypeInsert">
                                     <div class="nk-block nk-block-lg">
                                         
                                         <div class="card card-bordered card-preview">
@@ -27,43 +24,69 @@
                                                 <div class="preview-block">
                                                     @*<span class="preview-title-lg overline-title">Default Preview</span>*@
                                                     <div class="row gy-4">
-                                                        
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
-                                                                <label class="form-label" for="default-05">Room NO.</label>
+                                                                <label class="form-label" for="default-01">Id</label>
                                                                 <div class="form-control-wrap">
-                                                                    
-                                                                    <input type="text" class="form-control" name="roomno" id="default-05" placeholder="enter room number">
-                                                                    <input type="hidden" id="hname" name="hname" value="@hname">
+                                                                    <input type="text"  class="form-control" id="default-01" placeholder="enter room type id">
                                                                 </div>
                                                             </div>
                                                         </div>
-
-
-
+                                                        </div>
                                                         
                                                         
+                                                        <div class="row gy-4">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-05">Room Type </label>
+                                                                <div class="form-control-wrap">
+                                                                    
+                                                                    <input type="text"  class="form-control" id="default-05" placeholder="enter room type">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        </div>
+                                                        </div>
+                                                        </div>
 
-                                                        <div class="form-group">
+                                                        
+
+                                                        @*<div class="form-group">
                                                                 <label class="form-label" for="default-06">Room Type</label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
-                                                                        <select class="form-control"  name="typename" id="default-06">
-                                                        @foreach (var d in ViewBag.roomtype)
-                                                        {
-                                                            <option>@d.type</option>
-                                                            
-                                                        }
-                                                         </select>
+                                                                        <select class="form-control" name="amenities" id="default-06">
+                                                                            <option value="default_option">Room Type</option>
+                                                                            <option value="option_select_name">Single</option>
+                                                                            <option value="option_select_name">Double</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
+                                                            </div>*@
+
+                                                           
+
+
+                                                            @*<div class="form-group">
+                                                                <label class="form-label" for="default-05">Capacity</label>
+                                                                <div class="form-control-wrap">
+                                                                    
+                                                                    <input type="text" name="capacity" class="form-control" id="default-05" placeholder="room id">
+                                                                </div>
+                                                            </div>*@
+
+
+                                                       @* <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-05">Room Type</label>
+                                                                <div class="form-control-wrap">
+                                                                    
+                                                                    <input type="text" class="form-control" id="default-05" placeholder="room type">
+                                                                </div>
                                                             </div>
-
-
-
-
-                                                       
-                                                            
+                                                        </div>
+                                                            *@
                                                         @*<div class="col-sm-6">
                                                             <div class="form-group">
                                                                 <label class="form-label" for="default-textarea">Textarea</label>
@@ -72,10 +95,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>*@
-
-
-                                                        @*<div class="col-sm-6">
-                                                            <div class="form-group">
+                                                       @* <div class="col-sm-6">*@
+                                                            @*<div class="form-group">
                                                                 <label class="form-label" for="default-06">Upload Photos</label>
                                                                 <div class="form-control-wrap">
                                                                     <div class="form-file">
@@ -83,23 +104,20 @@
                                                                         <label class="form-file-label" for="customFile">Choose file</label>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-group">
+                                                            </div>*@
+                                                            @*<div class="form-group">
                                                                 <label class="form-label" for="default-06">Room Info</label>
                                                                 <div class="form-control-wrap ">
-                                                                    <div class="form-control-select">
-                                                                        <select class="form-control" id="default-06">
-                                                                            <option value="default_option">Room Info</option>
-                                                                            <option value="option_select_name">Single Room With Balcony</option>
-                                                                            <option value="option_select_name"> Deluxe Double Room</option>
+                                                                    <div class="form-control-select" >
+                                                                        <select class="form-control" name="facility" id="default-06">
+                                                                            <option >Room Info</option>
+                                                                            <option >Single Room With Balcony</option>
+                                                                            <option > Deluxe Double Room</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>*@
-
-
-
+                                                            </div>*@
+                                                       @* </div>*@
                                                         @*<div class="col-sm-6">
                                                             <div class="form-group">
                                                                 <label class="form-label" for="default-07">Bed Capacity</label>
@@ -116,9 +134,80 @@
                                                         </div>
                                                     </div>*@
 
-                                                  
-                                            </div>
-                                        </div><!-- .card-preview -->
+                                                   @*<div class="row gy-4">
+                                                        <div class="col-sm-6">
+                                                            @*<div class="form-group">
+                                                                <label class="form-label" for="default-1-01">Meal</label>
+                                                               <div class="form-control-wrap">
+                                                                    <div class="form-control-select">
+                                                                        <select class="form-control" name="amenities" id="default-06">
+                                                                            <option value="default_option">Meal</option>
+                                                                            <option value="option_select_name">Available</option>
+                                                                            <option value="option_select_name">None</option>
+                                                                        </select>
+                                                                    </div>
+                                                            </div>
+                                                        </div>*@
+
+                                                   @* <hr class="preview-hr">*@
+                                                    @*<span class="preview-title-lg overline-title">State Preview</span>*@
+                                                    @*<div class="row gy-4">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-1-01">Rent</label>
+                                                                <input type="text"  name="prize" class="form-control focus" id="default-1-01" placeholder="rent">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-1-02">Filled State</label>
+                                                                <input type="text" class="form-control" id="default-1-02" value="Abu Bin Ishtiyak">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-1-04">Error State</label>
+                                                                <input type="text" class="form-control error" id="default-1-04" placeholder="Input placeholder">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-1-03">Disabled State</label>
+                                                                <input type="text" class="form-control" id="default-1-03" disabled value="info@softnio.com">
+                                                            </div>
+                                                        </div>
+                                                    </div>*@
+                                                   @* <hr class="preview-hr">
+                                                    <span class="preview-title-lg overline-title">Size Preview </span>
+                                                    <div class="row gy-4 align-center">
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control form-control-lg" placeholder="Input Large">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control" placeholder="Input Regular">
+                                                                </div>
+                                                            </div>
+                                                        </div>*@
+                                                        @*<div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="Input Small">
+                                                                </div>
+                                                            </div>
+                                                        </div>*@
+                                                        @*<div class="col-12">
+                                                            <p class="text-soft">Use <code>.form-control-lg</code> or <code>.form-control-sm</code> with <code>.form-control</code> for large or small input box.</p>
+                                                        </div>*@
+                                                    
+                                              
+                                            
+                                        <!-- .card-preview -->
                                       @*  <div class="code-block">
                                             <h6 class="overline-title title">Code Example</h6>
                                             <button class="btn btn-sm clipboard-init" title="Copy to clipboard" data-clipboard-target="#formElements" data-clip-success="Copied" data-clip-text="Copy"><span class="clipboard-text">Copy</span></button>
@@ -331,18 +420,22 @@
                                
                                     </div>*@<!-- .components-preview -->
                              
-                            </div>
+                            
                         </div>
                     </div>
-                    <input type="submit"  value= "Add Room" class="btn btn-primary"/>
+                    <input type="submit" class="btn btn-primary" value="Add Room Type"/>
                  
                    
-                    <input type="submit" value="Cancel" class="btn btn-danger"/>
+                    <input type="submit" class="btn btn-danger" value="Cancel"/>
+                    
                    </form>
                 
                 </div>
                 </div>
                 </div>
                 </div>
+
+
+
 
 

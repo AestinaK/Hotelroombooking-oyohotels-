@@ -1,9 +1,10 @@
 ﻿@page
-@model BBQ.Views.AdRoom.RoomTypeIndexModel
+@model BBQ.Views.AdRoom.AddRoomTypeIndexModel
 @{
     Layout = "_AdminLayout";
 }
-                <div class="nk-content ">
+
+       <div class="nk-content ">
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
@@ -155,11 +156,11 @@
                                                         <div class="nk-tb-col"><span class="sub-text">#</span></div>
                                                         <div class="nk-tb-col"><span class="sub-text">Name</span></div>
                                                         <div class="nk-tb-col tb-col-mb"><span class="sub-text">Rent (Basic)</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Short Code</span></div>
+                                                        @*<div class="nk-tb-col tb-col-md"><span class="sub-text">Short Code</span></div>
                                                         <div class="nk-tb-col tb-col-lg"><span class="sub-text">No Of Room</span></div>
                                                         <div class="nk-tb-col tb-col-lg"><span class="sub-text">Type</span></div>
                                                         <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
-                                                        <div class="nk-tb-col nk-tb-col-tools text-end">
+                                                       *@ <div class="nk-tb-col nk-tb-col-tools text-end">
                                                             <div class="dropdown">
                                                                 <a href="#" class="btn btn-xs btn-outline-light btn-icon dropdown-toggle" data-bs-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-plus"></em></a>
                                                                 <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
@@ -180,7 +181,9 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div><!-- .nk-tb-item -->
+                                                    </div>
+                                                    @foreach(var d in ViewBag.types){
+                                                    <!-- .nk-tb-item -->
                                                     <div class="nk-tb-item">
                                                         <div class="nk-tb-col nk-tb-col-check">
                                                             <div class="custom-control custom-control-sm custom-checkbox notext">
@@ -192,12 +195,14 @@
                                                             <span class="text-primary">01</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Single Room<span class="dot dot-success d-md-none ms-1"></span> </span>
+                                                            <span>@d.type<span class="dot dot-success d-md-none ms-1"></span> </span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-mb" data-order="30.99">
                                                             <span class="tb-amount">29.99<span class="currency">USD</span></span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-md">
+                                                        </div>
+                                                        }
+                                                        @*<div class="nk-tb-col tb-col-md">
                                                             <span>SR</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-lg">
@@ -430,8 +435,8 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                    </div><!-- .nk-tb-item  -->
-                                                </div><!-- .nk-tb-list -->
+                                                    </div><!--*@ .nk-tb-item  -->
+                                                <!-- .nk-tb-list -->
                                             </div><!-- .card-inner -->
                                             <div class="card-inner">
                                                 <div class="nk-block-between-md g-3">
@@ -484,3 +489,4 @@
                         </div>
                     </div>
                 </div>
+         </div>
