@@ -112,13 +112,13 @@ namespace BBQ.Controllers
 
 
 
-        public IActionResult Price()
+        public IActionResult Price(string hname)
         {
-            /*
+            
             var hotel = dal.Hotelss.Where(x => x.name == hname).ToList();
             var hid = hotel[0].hid;
 
-            var rooms = dal.Rooms.Where(x => x.hid == hid).ToList();*/
+            
 
 
             var roomtyp = dal.Roomtypes.ToList();
