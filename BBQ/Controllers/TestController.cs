@@ -33,10 +33,37 @@ namespace BBQ.Controllers
             var hotelIds = roomHotelGroup.Where(x => x.Count() >= vm.noofrooms).Select(z => z.Key).ToList();
             
             var hotels = dal.Hotelss.Where(a => a.address==vm.address).Where(x => hotelIds.Contains(x.hid)).ToList();
-/*             var price = dal.Prices.Where(a => a.rtid == 1).Where(x => hotels.Contains(x.hid)).ToList();            
+/*           
+ *           var price = dal.Prices.Where(a => a.rtid == 1).Where(x => hotels.Contains(x.hid)).ToList();            
 */            ViewBag.datas = hotels;
 
-            
+
+           /* var review = dal.Commnets.ToList();
+            var ratingcount = review.Count;
+            double ratingc = review.Count;
+            int c = ratingcount - 1;
+            double ra = 0;
+             List<double> reviews = new List<double>();
+
+            foreach(var it in hotels)
+            {
+                for (int i = 0; i <= c; i++)
+                {
+                    reviews = ra + review[i].rating;
+
+                }
+            }
+
+            for (int i = 0; i <= c; i++)
+            {
+                ra = ra + review[i].rating;
+
+            }
+
+            double rno = ra / ratingc;
+
+            int ratings = (int)Math.Ceiling(rno);
+*/
 
             return View();
         }

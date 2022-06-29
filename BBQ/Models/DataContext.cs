@@ -44,7 +44,7 @@ namespace BBQ.Models
 
 		public DbSet<Price> Prices { get; set; }
 		public DbSet<Photo> Photos { get; set; }
-		public DbSet<Commnet> Commnets { get; set; }
+		public DbSet<Comment> Comments { get; set; }
 
 
 

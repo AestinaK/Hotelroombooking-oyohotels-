@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace BBQ.Models
 {
     [Table("comment")]
-    public class Commnet
+    public class Comment
     {
         [Key]
         public int cid { get; set; }

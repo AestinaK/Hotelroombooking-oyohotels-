@@ -19,6 +19,28 @@ namespace BBQ.Controllers
             ViewBag.end = eend;
             ViewBag.hid = hid;
 
+
+            var review = dal.Comments.Where(x=>x.hid==hid).ToList();
+            ViewBag.reviews = review;
+
+            var ratingcount = review.Count;
+            ViewBag.Counts= ratingcount;
+            double ratingc = review.Count;
+            int c = ratingcount - 1;
+            double ra = 0;
+            // List<var> reviews = new List<int>();
+            for (int i = 0; i <= c; i++)
+            {
+                ra = ra + review[i].rating;
+
+            }
+
+            double rno = ra / ratingc;
+            
+            int ratings = (int)Math.Ceiling(rno);
+
+            ViewBag.ratings = ratings;
+
             var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
             var available_rooms = dal.Rooms.Where(a => a.hid == hid).Where(x => !booked_rooms.Contains(x.rid)).ToList();
             var roomTypeGroup = available_rooms.GroupBy(x => x.rtid).ToList(); 

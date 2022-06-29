@@ -24,16 +24,7 @@ namespace BBQ.Controllers
             ViewBag.end = eend;
             ViewBag.hid = hid;
 
-            var review = dal.Commnets.ToList();
-            var ratingcount=review.Count;
-            int c = ratingcount - 1;
-            int ra = 0;
-           // List<var> reviews = new List<int>();
-            for (int i = 0; i <= c; i++)
-            {
-                ra= ra+ review[i].rating;
-
-            }
+            
 
 
             
@@ -121,6 +112,14 @@ namespace BBQ.Controllers
             ViewBag.total = total;
 
             return View();
+        }
+
+        public IActionResult Rating(Comment vm)
+
+        {
+            dal.Comments.Add(vm);
+            dal.SaveChanges();
+            return RedirectToAction("Index", "Landing");
         }
     }
 }

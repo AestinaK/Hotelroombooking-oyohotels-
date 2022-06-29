@@ -90,11 +90,13 @@
                                                     <h2 class="product-title">White Vintage Hotel</h2>
                                                     <div class="product-rating">
                                                         <ul class="rating">
-                                                            <li><em class="icon ni ni-star-fill"></em></li>
-                                                            <li><em class="icon ni ni-star-fill"></em></li>
-                                                            <li><em class="icon ni ni-star-fill"></em></li>
-                                                            <li><em class="icon ni ni-star-fill"></em></li>
-                                                            <li><em class="icon ni ni-star-half"></em></li>
+
+                                                            
+                                                            @for(int i = 1; i<= @ViewBag.ratings; i++){
+                                                         <li><em class="icon ni ni-star-fill"></em></li>
+                                                           }
+                                                
+                                                            
                                                         </ul>
                                                         <div class="amount">(2 Reviews)</div>
                                                     </div><!-- .product-rating -->
@@ -356,8 +358,12 @@
 
                           <!-- start-->
 
+                         
                           <div class="nk-chat-list">
                                             <h6 class="title overline-title-alt">Reviews</h6>
+
+                                            @foreach(var itea in ViewBag.reviews){
+
                                             <ul class="chat-list">
                                                 <li class="chat-item">
                                                     <a class="chat-link chat-open" href="#">
@@ -367,12 +373,12 @@
                                                         </div>
                                                         <div class="chat-info">
                                                             <div class="chat-from">
-                                                                <div class="name">Iliash Hossain</div>
+                                                                <div class="name">@itea.user</div>
                                                                 <span class="time">Now</span>
                                                             </div>
                                                             <div class="chat-context">
                                                                 <div class="text">
-                                                                    <p>Best hotel i have ever stayed.</p>
+                                                                    <p>@itea.comment</p>
                                                                 </div>
                                                                 <div class="status delivered">
                                                                     <em class="icon ni ni-check-circle-fill"></em>
@@ -398,8 +404,9 @@
                                                         </div>*@
                                                
                                             </ul><!-- .chat-list -->
+                                            }
                                         </div>
-
+                                    
 
                                <div class="nk-block-head nk-block-head-sm">
                                 <div class="nk-block-between g-3">
@@ -413,15 +420,15 @@
                                 </div>
                             </div>
 
-
+                             <form method="post" asp-controller="BookRoom" asp-action="Rating">
 
                                          <div class="nk-chat-editor">
 
-                                             <form method="post" asp-controller="BookRoom" asp-action="Rating">
+                                            
                                               
                                                         <ul class="d-flex flex-wrap ailgn-center g-2 pt-1">
                                                             <li class="w-140px">
-                                                                 <select name="Rating " class="form-select js-select2" data-ui="xl" id="outlined-select">
+                                                                 <select name="Rating" class="form-select js-select2" data-ui="xl" id="outlined-select">
                                                                         <option >Rating</option>
                                                                          <option >1</option>
                                                                         <option >2</option>
@@ -443,26 +450,27 @@
                                        
                                         <div class="nk-chat-editor-form">
                                             <div class="form-control-wrap">
-                                                <textarea class="form-control form-control-simple no-resize" rows="1" id="default-textarea" placeholder="Type your reviews..."></textarea>
+                                                <textarea class="form-control form-control-simple no-resize" name="comment" rows="1" id="default-textarea" placeholder="Type your reviews..."></textarea>
                                             </div>
                                         </div>
 
-                                       
+                                       <input type="hidden" name="hid" value="@ViewBag.hid"  />
+                                       <input type="hidden" name="user" value="123"  />
 
 
                                         <ul class="nk-chat-editor-tools g-2">
                                             
                                             <li>
-                                      <input type="submit" asp-route-hid="@ViewBag.hid"  value="Submit" class="btn btn-xl btn-primary"/>                                 
+                                      <input type="submit"  value="Submit" class="btn btn-xl btn-primary"/>                                 
 
                                             </li>
                                         </ul>
 
-                                        </form>
+                                       
                                     </div><!-- .nk-chat-editor -->
                            <!-- end-->
 
-
+                            </form>
                            
 
 
