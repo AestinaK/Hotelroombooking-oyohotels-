@@ -4,7 +4,7 @@
     Layout = "_AdminLayout";
 }
 
-       <div class="nk-content ">
+    <div class="nk-content ">
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
@@ -13,25 +13,27 @@
                                         <div class="nk-block-head-content">
                                             <h3 class="nk-block-title page-title">Room Type</h3>
                                             <div class="nk-block-des text-soft">
-                                                <p>Here is our Various room type.</p>
+                                                <p>Here is our various roomtype.</p>
                                             </div>
                                         </div><!-- .nk-block-head-content -->
+                                     
                                         <div class="nk-block-head-content">
                                             <ul class="nk-block-tools g-3">
                                                 <li>
                                                     <div class="drodown">
-                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
+                                                        <a  class="dropdown-toggle btn btn-icon btn-primary" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                             <ul class="link-list-opt no-bdr">
-                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#add-room-type"><span>Add Room Type</span></a></li>
-                                                                <li><a href="#"><span>Import Room Type</span></a></li>
+                                                              @*  <li><a data-bs-toggle="modal" data-bs-target="#add-room"><span>Add Room</span></a></li>*@
+                                                                <li > <a   asp-controller="AdRoom" asp-action="AddRoomTypeIndex"> <span>Add Room</span> </a> </li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div><!-- .nk-block-head-content -->
-                                    </div><!-- .nk-block-between -->
+                                    
+                                 </div><!-- .nk-block-between -->
                                 </div><!-- .nk-block-head -->
                                 <div class="nk-block">
                                     <div class="card card-bordered card-stretch">
@@ -74,7 +76,7 @@
                                                                                     </a>
                                                                                     <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
                                                                                         <div class="dropdown-head">
-                                                                                            <span class="sub-title dropdown-title">Filter Room Type</span>
+                                                                                            <span class="sub-title dropdown-title">Filter Rooms</span>
                                                                                             <div class="dropdown">
                                                                                                 <a href="#" class="btn btn-sm btn-icon">
                                                                                                     <em class="icon ni ni-more-h"></em>
@@ -83,13 +85,26 @@
                                                                                         </div>
                                                                                         <div class="dropdown-body dropdown-body-rg">
                                                                                             <div class="row gx-6 gy-3">
-                                                                                                <div class="col-12">
+                                                                                                <div class="col-6">
                                                                                                     <div class="form-group">
                                                                                                         <label class="overline-title overline-title-alt">Status</label>
                                                                                                         <select class="form-select js-select2 js-select2-sm">
                                                                                                             <option value="any">Any Status</option>
-                                                                                                            <option value="Active">active</option>
+                                                                                                            <option value="paid">Booked</option>
+                                                                                                            <option value="open">Open</option>
                                                                                                             <option value="inactive">Inactive</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-6">
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="overline-title overline-title-alt">Room Type</label>
+                                                                                                        <select class="form-select js-select2 js-select2-sm">
+                                                                                                            <option value="any">Any Type</option>
+                                                                                                            <option value="single">Single</option>
+                                                                                                            <option value="double">Double</option>
+                                                                                                            <option value="delux">Delux</option>
+                                                                                                            <option value="sdelux">Super Delux</option>
                                                                                                         </select>
                                                                                                     </div>
                                                                                                 </div>
@@ -138,13 +153,14 @@
                                                     <div class="card-body">
                                                         <div class="search-content">
                                                             <a href="#" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
-                                                            <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by room name">
+                                                            <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by room no or type">
                                                             <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
                                                         </div>
                                                     </div>
                                                 </div><!-- .card-search -->
                                             </div><!-- .card-inner -->
                                             <div class="card-inner p-0">
+                                                
                                                 <div class="nk-tb-list nk-tb-ulist">
                                                     <div class="nk-tb-item nk-tb-head">
                                                         <div class="nk-tb-col nk-tb-col-check">
@@ -153,22 +169,38 @@
                                                                 <label class="custom-control-label" for="uid"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col"><span class="sub-text">#</span></div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Name</span></div>
-                                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Rent (Basic)</span></div>
-                                                        @*<div class="nk-tb-col tb-col-md"><span class="sub-text">Short Code</span></div>
-                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">No Of Room</span></div>
-                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Type</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
-                                                       *@ <div class="nk-tb-col nk-tb-col-tools text-end">
+                                                        
+                                                        @*<div class="nk-tb-col"><span class="sub-text">Hotel Id</span></div>*@
+
+                                         
+                                                        <div class="nk-tb-col"><span class="sub-text">Room Type</span></div>
+                                                       
+                                                        
+                                                        
+                                                        @* 
+                                                           
+                                                       
+                                                       <div class="nk-tb-col tb-col-md"><span class="sub-text">Room Info</span></div>
+                                                        
+                                                        
+                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Bed Capacity</span></div>
+                                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Rent</span></div>
+                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>*@
+                                                        @*<div class="nk-tb-col nk-tb-col-tools text-end">
                                                             <div class="dropdown">
                                                                 <a href="#" class="btn btn-xs btn-outline-light btn-icon dropdown-toggle" data-bs-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-plus"></em></a>
                                                                 <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
                                                                     <ul class="link-tidy sm no-bdr">
                                                                         <li>
                                                                             <div class="custom-control custom-control-sm custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" checked="" id="active">
-                                                                                <label class="custom-control-label" for="active">Active</label>
+                                                                                <input type="checkbox" class="custom-control-input" checked="" id="bo">
+                                                                                <label class="custom-control-label" for="bo">Booked</label>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" checked="" id="open">
+                                                                                <label class="custom-control-label" for="open">Open</label>
                                                                             </div>
                                                                         </li>
                                                                         <li>
@@ -180,46 +212,31 @@
                                                                     </ul>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    @foreach(var d in ViewBag.types){
-                                                    <!-- .nk-tb-item -->
+                                                        </div>*@
+                                                    </div><!-- .nk-tb-item -->
+                                                    @foreach(var d in ViewBag.roomtype){
                                                     <div class="nk-tb-item">
+
+                   
                                                         <div class="nk-tb-col nk-tb-col-check">
-                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                                <input type="checkbox" class="custom-control-input" id="uid1">
-                                                                <label class="custom-control-label" for="uid1"></label>
+                                                          <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                            <input type="checkbox" class="custom-control-input" id="uid1">
+                                                             <label class="custom-control-label" for="uid1"></label>
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="text-primary">01</span>
+                                                            <span class="text-primary">@d.roomtype</span>
                                                         </div>
-                                                        <div class="nk-tb-col">
-                                                            <span>@d.type<span class="dot dot-success d-md-none ms-1"></span> </span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb" data-order="30.99">
-                                                            <span class="tb-amount">29.99<span class="currency">USD</span></span>
-                                                        </div>
-                                                        </div>
-                                                        }
-                                                        @*<div class="nk-tb-col tb-col-md">
-                                                            <span>SR</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <span>60</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-lg">
-                                                            <ul class="d-flex text-warning">
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-success">Active</span>
-                                                        </div>
+                                                       }
+                                                        
+                                                        
+                                                        
+                                                        @*<div class="nk-tb-col tb-col-lg">
+                                                            <span>1</span>
+                                                        </div>*@
+                                                        
+                                                        
+                                                        
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -227,7 +244,7 @@
                                                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
-                                                                                <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a asp-controller="AdRoom" asp-route-id="@d.rid" asp-action="UpdateRoom" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
                                                                                 <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
                                                                             </ul>
                                                                         </div>
@@ -235,8 +252,12 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
+                                                    
                                                     </div><!-- .nk-tb-item  -->
-                                                    <div class="nk-tb-item">
+
+                                                    }
+
+                                                    @*<div class="nk-tb-item">
                                                         <div class="nk-tb-col nk-tb-col-check">
                                                             <div class="custom-control custom-control-sm custom-checkbox notext">
                                                                 <input type="checkbox" class="custom-control-input" id="uid2">
@@ -244,31 +265,25 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="text-primary">02</span>
+                                                            <span class="text-primary">102</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Double<span class="dot dot-success d-md-none ms-1"></span> </span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb" data-order="30.99">
-                                                            <span class="tb-amount">39.99<span class="currency">USD</span></span>
+                                                            <span>Single <span class="dot dot-warning d-md-none ms-1"></span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>DD</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-lg" data-order="Email Verified - Kyc Unverified">
-                                                            <span>40</span>
+                                                            <span>AC</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-lg">
-                                                            <ul class="d-flex text-warning">
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                            </ul>
+                                                            <span>Breakfast</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>1</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">35.00 <span class="currency">USD</span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-success">Active</span>
+                                                            <span class="tb-status text-warning">Pending</span>
                                                         </div>
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
@@ -277,7 +292,7 @@
                                                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
-                                                                                <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
                                                                                 <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
                                                                             </ul>
                                                                         </div>
@@ -294,31 +309,25 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="text-primary">03</span>
+                                                            <span class="text-primary">103</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Delux<span class="dot dot-success d-md-none ms-1"></span> </span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb" data-order="30.99">
-                                                            <span class="tb-amount">49.99<span class="currency">USD</span></span>
+                                                            <span>Double <span class="dot dot-success d-md-none ms-1"></span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>DLUX</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-lg" data-order="Email Verified - Kyc Unverified">
-                                                            <span>35</span>
+                                                            <span>None</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-lg">
-                                                            <ul class="d-flex text-warning">
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                            </ul>
+                                                            <span>Dinner</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>2</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">44.99 <span class="currency">USD</span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-success">Active</span>
+                                                            <span class="tb-status text-success">Open</span>
                                                         </div>
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
@@ -327,7 +336,7 @@
                                                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
-                                                                                <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
                                                                                 <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
                                                                             </ul>
                                                                         </div>
@@ -344,31 +353,25 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="text-primary">04</span>
+                                                            <span class="text-primary">104</span>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span>Super Delux<span class="dot dot-success d-md-none ms-1"></span> </span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-mb" data-order="30.99">
-                                                            <span class="tb-amount">59.99<span class="currency">USD</span></span>
+                                                            <span>Double <span class="dot dot-success d-md-none ms-1"></span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>SDLUX</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-lg" data-order="Email Verified - Kyc Unverified">
-                                                            <span>30</span>
+                                                            <span>AC</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-lg">
-                                                            <ul class="d-flex text-warning">
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star"></em></li>
-                                                            </ul>
+                                                            <span>Two</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>2</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">48.99<span class="currency">USD</span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-success">Active</span>
+                                                            <span class="tb-status text-success">Open</span>
                                                         </div>
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
@@ -377,7 +380,7 @@
                                                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
-                                                                                <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
                                                                                 <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
                                                                             </ul>
                                                                         </div>
@@ -394,28 +397,154 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col">
-                                                            <span class="text-primary">05</span>
+                                                            <span class="text-primary">105</span>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span>Delux <span class="dot dot-primary d-md-none ms-1"></span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>None</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Lunch</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>2</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">53.99<span class="currency">USD</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span class="tb-status text-primary">Booked</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!-- .nk-tb-item  -->
+                                                    <div class="nk-tb-item">
+                                                        <div class="nk-tb-col nk-tb-col-check">
+                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                                <input type="checkbox" class="custom-control-input" id="uid6">
+                                                                <label class="custom-control-label" for="uid6"></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span class="text-primary">201</span>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span>Super Delux <span class="dot dot-primary d-md-none ms-1"></span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>AC</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>All</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>3</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">68.99<span class="currency">USD</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span class="tb-status text-primary">Booked</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!-- .nk-tb-item  -->
+                                                    <div class="nk-tb-item">
+                                                        <div class="nk-tb-col nk-tb-col-check">
+                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                                <input type="checkbox" class="custom-control-input" id="uid7">
+                                                                <label class="custom-control-label" for="uid7"></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span class="text-primary">202</span>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span>Super Delux <span class="dot dot-success d-md-none ms-1"></span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>AC</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Two</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>3</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">68.99<span class="currency">USD</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span class="tb-status text-success">Open</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!-- .nk-tb-item  -->
+                                                    <div class="nk-tb-item">
+                                                        <div class="nk-tb-col nk-tb-col-check">
+                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                                <input type="checkbox" class="custom-control-input" id="uid8">
+                                                                <label class="custom-control-label" for="uid8"></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span class="text-primary">301</span>
                                                         </div>
                                                         <div class="nk-tb-col">
                                                             <span>Suit<span class="dot dot-danger d-md-none ms-1"></span></span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb" data-order="30.99">
-                                                            <span class="tb-amount">399.99<span class="currency">USD</span></span>
-                                                        </div>
                                                         <div class="nk-tb-col tb-col-md">
-                                                            <span>SUIT</span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-lg" data-order="Email Verified - Kyc Unverified">
-                                                            <span>10</span>
+                                                            <span>AC</span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-lg">
-                                                            <ul class="d-flex text-warning">
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                                <li><em class="icon ni ni-star-fill"></em></li>
-                                                            </ul>
+                                                            <span>Breakfast</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>3</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">450<span class="currency">USD</span></span>
                                                         </div>
                                                         <div class="nk-tb-col tb-col-md">
                                                             <span class="tb-status text-danger">Inactive</span>
@@ -427,7 +556,7 @@
                                                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
-                                                                                <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
                                                                                 <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
                                                                             </ul>
                                                                         </div>
@@ -435,8 +564,96 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                    </div><!--*@ .nk-tb-item  -->
-                                                <!-- .nk-tb-list -->
+                                                    </div><!-- .nk-tb-item  -->
+                                                    <div class="nk-tb-item">
+                                                        <div class="nk-tb-col nk-tb-col-check">
+                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                                <input type="checkbox" class="custom-control-input" id="uid9">
+                                                                <label class="custom-control-label" for="uid9"></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span class="text-primary">302</span>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span>Suit<span class="dot dot-danger d-md-none ms-1"></span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>AC</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>Two</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>3</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">499.99<span class="currency">USD</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span class="tb-status text-danger">Inactive</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!-- .nk-tb-item  -->
+                                                    <div class="nk-tb-item">
+                                                        <div class="nk-tb-col nk-tb-col-check">
+                                                            <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                                <input type="checkbox" class="custom-control-input" id="uid10">
+                                                                <label class="custom-control-label" for="uid10"></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span class="text-primary">303</span>
+                                                        </div>
+                                                        <div class="nk-tb-col">
+                                                            <span>Suit<span class="dot dot-danger d-md-none ms-1"></span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span>AC</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>All</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-lg">
+                                                            <span>5</span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-mb">
+                                                            <span class="tb-amount">999.99<span class="currency">USD</span></span>
+                                                        </div>
+                                                        <div class="nk-tb-col tb-col-md">
+                                                            <span class="tb-status text-danger">Inactive</span>
+                                                        </div>
+                                                        <div class="nk-tb-col nk-tb-col-tools">
+                                                            <ul class="nk-tb-actions gx-1">
+                                                                <li>
+                                                                    <div class="drodown">
+                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                                            <ul class="link-list-opt no-bdr">
+                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!-- .nk-tb-item  -->
+                                                </div><!-- .nk-tb-list -->*@
                                             </div><!-- .card-inner -->
                                             <div class="card-inner">
                                                 <div class="nk-block-between-md g-3">
@@ -489,4 +706,4 @@
                         </div>
                     </div>
                 </div>
-         </div>
+    </div>

@@ -16,13 +16,13 @@ namespace BBQ.Controllers
             var hid = hotel[0].hid;
 
             var rooms = dal.Rooms.Where(x => x.hid == hid).ToList();
-           // var roomt = rooms[0].rtid;
+            // var roomt = rooms[0].rtid;
 
             var roomtyp = dal.Roomtypes.ToList();
 
             ViewBag.rooms = rooms;
             ViewBag.roomtypess = roomtyp;
-            
+
             return View();
         }
 
@@ -33,22 +33,19 @@ namespace BBQ.Controllers
             ViewBag.types = types;
             return View();
 
-           
+
         }
 
 
 
-
-       
-
-      [HttpPost]
+        [HttpPost]
         public IActionResult Insert(Addroomvm vm)
         {
             var roomtype = vm.typename;
             var hotelname = vm.hname;
 
-            var types=dal.Roomtypes.Where(x=>x.type == roomtype).ToList();
-           // var type = types.Select(x => x.Key);
+            var types = dal.Roomtypes.Where(x => x.type == roomtype).ToList();
+            // var type = types.Select(x => x.Key);
             var hotel = dal.Hotelss.Where(x => x.name == hotelname).ToList();
             //var typeid = types.rtid;
             //dal.SaveChanges();
@@ -59,15 +56,15 @@ namespace BBQ.Controllers
                 Room login = new Room()
                 {
                     rtid = roomid,
-                    hid=hotelid,
-                    roomno=vm.roomno
+                    hid = hotelid,
+                    roomno = vm.roomno
 
                 };
 
-                
+
 
                 dal.Rooms.Add(login);
-                
+
                 dal.SaveChanges();
 
 
@@ -79,14 +76,16 @@ namespace BBQ.Controllers
 
 
             return RedirectToAction("AddRoomIndex", "AdRoom");
-            
+
         }
 
 
+
+        //roomtype
         public IActionResult RoomTypeIndex()
         {
-            var types = dal.Roomtypes.ToList();
-            ViewBag.types = types;
+            var roomtype = dal.Roomtypes;
+            ViewBag.roomtype = roomtype;
             return View();
         }
 
@@ -96,21 +95,47 @@ namespace BBQ.Controllers
             return View();
         }
 
+        public IActionResult TypeInsert(Roomtype vm)
+        {
+            dal.Roomtypes.Add(vm);
+            dal.SaveChanges();
+            // dal.SaveChanges();
+
+
+            return RedirectToAction("AddRoomTypeIndex", "AdRoom");
+
+        }
+
+
+
+
 
 
 
         //update room
-        public IActionResult UpdateRoom(int rid) 
-        {
-            var data = dal.Rooms.Find(rid);
-            ViewBag.d = data;
-            // dal.SaveChanges();
-            return View();
 
 
-           
         
-        }
+        public IActionResult UpdateRoom(Updateroomvm vm)
+        {
+            var roomdetails = dal.room.Where(x => x.rid = vm.rid).ToList();
+            try
+            {
+                foreach (var d in roomdetails)
+                {
+                    d.Roomno = vm.roomno;
+                    d.roomtype = rtid;
+                }
+            }
+            dal.SaveChanges();
+        }catch(Exception e){
+            Console.WriteLine(e);
+
+        
+         var rtid = dal.roomtype.Where(x => x.type = vm.roomtype);
+     Return Redirect("UpdateRoom","AdRoom");
+
+}
 
 
         [HttpPost]
