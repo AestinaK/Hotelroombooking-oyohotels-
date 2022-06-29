@@ -98,6 +98,37 @@ namespace BBQ.Controllers
 
 
 
+        //update room
+        public IActionResult UpdateRoom(int rid) 
+        {
+            var data = dal.Rooms.Find(rid);
+            ViewBag.d = data;
+            // dal.SaveChanges();
+            return View();
+
+
+           
+        
+        }
+
+
+        [HttpPost]
+        public IActionResult Up(Room datamodel)
+
+
+        {
+            dal.Rooms.Update(datamodel);
+            dal.SaveChanges();
+            return RedirectToAction("RoomIndex", "AdRoom");
+        }
+
+
+
+
+
+
+
+
         //for facilities and services
 
         public IActionResult FacilitiesIndex()

@@ -9,6 +9,7 @@
   <ItemGroup>
     <Content Remove="Views\AdRoom\DirIndex.cshtml" />
     <Content Remove="Views\AdRoom\Price.cshtml" />
+    <Content Remove="Views\AdRoom\UpdateRoom.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,15 +25,21 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\AdRoom\DirIndex.cshtml" />
     <_ContentIncludedByDefault Remove="Views\AdRoom\Price.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\AdRoom\UpdateRoom.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Views\AdRoom\DirIndex.cshtml" />
     <None Include="Views\AdRoom\Price.cshtml" />
+    <None Include="Views\AdRoom\UpdateRoom.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\AdRoom\Price.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\AdRoom\UpdateRoom.cshtml" />
   </ItemGroup>
 
 </Project>

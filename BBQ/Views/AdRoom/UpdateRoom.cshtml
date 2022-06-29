@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNetCore.Http;
+﻿
+@model BBQ.Views.AdRoom.UpdateRoomModel
+@using Microsoft.AspNetCore.Http;
 @{
     Layout = "_AdminLayout";
 }
@@ -12,14 +14,14 @@
                                 <div class="components-preview wide-md mx-auto">
                                     <div class="nk-block-head nk-block-head-lg wide-sm">
                                         
-                                            <h2 class="nk-block-title fw-normal">Add Room</h2>
+                                            <h2 class="nk-block-title fw-normal">Edit Room</h2>
                                             
                                         </div>
 
                                         @{var hname = Context.Session.GetString("hname"); }
                                         
                                     </div><!-- .nk-block-head -->
-                                  <form asp-controller="AdRoom" asp-action="Insert">
+                                  <form asp-controller="AdRoom" asp-action="Up">
                                     <div class="nk-block nk-block-xxl">
                                         
                                         <div class="card card-bordered card-preview">
@@ -33,7 +35,7 @@
                                                                 <label class="form-label" for="default-05">Room NO.</label>
                                                                 <div class="form-control-wrap">
                                                                     
-                                                                    <input type="text" class="form-control" name="roomno" id="default-05" placeholder="enter room number">
+                                                                    <input type="text" class="form-control" name="roomno" id="default-05" vaule="@ViewBag.d.rid">
                                                                     <input type="hidden" id="hname" name="hname" value="@hname">
                                                                 </div>
                                                             </div>
@@ -334,7 +336,7 @@
                                      <br>
                                      <div class="col-sm-2">
                                                             <div class="form-group">
-                                                               <input type="submit"  value= "Add Room" class="btn btn-secondary"/>
+                                                               <input type="submit"  value= "Edit Room" class="btn btn-secondary"/>
                  
                    
                                                               <input type="submit" value="Cancel" class="btn btn-light"/> 

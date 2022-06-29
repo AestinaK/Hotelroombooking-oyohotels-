@@ -169,7 +169,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-tb-col"><span class="sub-text">Room No</span></div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Hotel Id</span></div>
+                                                        @*<div class="nk-tb-col"><span class="sub-text">Hotel Id</span></div>*@
 
                                          
                                                         <div class="nk-tb-col"><span class="sub-text">Room Type</span></div>
@@ -248,7 +248,7 @@
                                                                         <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                         <div class="dropdown-menu dropdown-menu-end">
                                                                             <ul class="link-list-opt no-bdr">
-                                                                                <li><a href="" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
+                                                                                <li><a asp-controller="AdRoom" asp-route-id="@d.rid" asp-action="UpdateRoom" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
                                                                                 <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
                                                                             </ul>
                                                                         </div>
