@@ -113,8 +113,11 @@ namespace BBQ.Controllers
 
 
         //update room
-
-
+        public IActionResult updroom( )
+        {
+            return View();
+        }
+        
         
         public IActionResult UpdateRoom( int rid)
         {
