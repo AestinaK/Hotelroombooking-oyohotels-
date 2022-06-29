@@ -43,6 +43,8 @@ namespace BBQ.Models
 		public DbSet<Userregister> Userregisters { get; set; }
 
 		public DbSet<Price> Prices { get; set; }
+		public DbSet<Photo> Photos { get; set; }
+		public DbSet<Commnet> Commnets { get; set; }
 
 
 
