@@ -8,7 +8,7 @@ namespace BBQ.Models
     {
         [Key]
         public int pid { get; set; }
-        public List<string> photos { get; set; }
+        public string photos { get; set; }
      
         public string hid { get; set; }
     }
