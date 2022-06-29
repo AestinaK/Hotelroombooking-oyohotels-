@@ -33,23 +33,7 @@ namespace BBQ.Controllers
                 for (int i = 0; i <=nf; i++)
             {
                 var r = available_rooms[i].rid;
-                    // room.rid = i;
-
-
-
-                    /*Roomreservation login = new Roomreservation()
-                    {
-                        hid = hid,
-                        checkin = start,
-                        checkout = end,
-                        roomid = r,
-                        userid = 132
-
-                    };*/
-
-               
-
-               // dal.Roomreservations.Add(login);
+                    
                  bookrooms.Add(new Roomreservation()
                  {
                      hid = hid,
@@ -105,7 +89,7 @@ namespace BBQ.Controllers
 
             var rtidd = print[0].roomid;
 
-             var hotel = dal.Hotelss.Where(x => x.hid == hidd).ToList();
+            var hotel = dal.Hotelss.Where(x => x.hid == hidd).ToList();
             var hotelname = hotel[0].name;
 
             ViewBag.hname = hotelname;

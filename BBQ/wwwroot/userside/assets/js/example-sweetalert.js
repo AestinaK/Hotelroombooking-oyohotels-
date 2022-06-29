@@ -1,6 +1,6 @@
 "use strict";
 
-(function (NioApp, $) {
+(function (NioApp, $) { 
   'use strict'; // Basic Sweet Alerts
 
   $('.eg-swal-default').on("click", function (e) {
@@ -12,7 +12,7 @@
     e.preventDefault();
   });
   $('.eg-swal-success').on("click", function (e) {
-    Swal.fire("Good job!", "You clicked the button!", "success");
+    Swal.fire("Good job!", "Thanks for Booking !", "success");
     e.preventDefault();
   });
   $('.eg-swal-info').on("click", function (e) {
@@ -94,8 +94,8 @@
   $('.eg-swal-av5').on("click", function (e) {
     var timerInterval;
     Swal.fire({
-      title: 'Auto close alert!',
-      html: 'I will close in <b></b> milliseconds.',
+      title: 'Searching Hotels!',
+      html: 'Please wait finding best room for you in <b></b> milliseconds.',
       timer: 2000,
       timerProgressBar: true,
       onBeforeOpen: function onBeforeOpen() {

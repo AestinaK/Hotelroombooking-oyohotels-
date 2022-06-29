@@ -19,7 +19,7 @@ namespace BBQ.Controllers
             ViewBag.end = eend;
             ViewBag.hid = hid;
 
-             var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
+            var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
             var available_rooms = dal.Rooms.Where(a => a.hid == hid).Where(x => !booked_rooms.Contains(x.rid)).ToList();
             var roomTypeGroup = available_rooms.GroupBy(x => x.rtid).ToList(); 
              
@@ -45,7 +45,7 @@ namespace BBQ.Controllers
         [HttpPost]
         public IActionResult Indexx( int hid )
         {
-
+             
            /* ViewBag.checkin = vm.start;
             ViewBag.checkout = vm.end;
             ViewBag.noofroom = vm.noofrooms;*/
@@ -56,7 +56,7 @@ namespace BBQ.Controllers
            /* var start= DateOnly.Parse(vm.start);
             var end = DateOnly.Parse(vm.end);*/
 
-            var hotelid = hid;
+              var hotelid = hid;
 
            /* var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
             var available_rooms = dal.Rooms.Where(a => a.hid == hid).Where(x => !booked_rooms.Contains(x.rid)).ToList();
