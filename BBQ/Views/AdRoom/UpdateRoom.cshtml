@@ -35,8 +35,8 @@
                                                                 <label class="form-label" for="default-05">Room NO.</label>
                                                                 <div class="form-control-wrap">
                                                                     
-                                                                    <input type="text" class="form-control" name="roomno" id="default-05" vaule="@ViewBag.d.rid">
-                                                                    <input type="hidden" id="hname" name="hname" value="@hname">
+                                                                    <input type="text" class="form-control" name="roomno" id="default-05" vaule="ViewBag.roomdetails.roomno">
+                                                                    <input type="hidden" id="rid" name="hname" value="@ViewBag.roomdetails.rid">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -51,7 +51,8 @@
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
                                                                         <select class="form-control"  name="typename" id="default-06">
-                                                        @foreach (var d in ViewBag.types)
+                                                                             <option>ViewBag.roomrtid</option>
+                                                        @foreach (var d in ViewBag.roomtype)
                                                         {
                                                             <option>@d.type</option>
                                                             

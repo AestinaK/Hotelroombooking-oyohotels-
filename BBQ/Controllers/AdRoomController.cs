@@ -116,9 +116,25 @@ namespace BBQ.Controllers
 
 
         
-        public IActionResult UpdateRoom(Updateroomvm vm)
+        public IActionResult UpdateRoom( int rid)
         {
-            var roomdetails = dal.room.Where(x => x.rid = vm.rid).ToList();
+
+            var roomdetails=dal.Rooms.Where(x=>x.rid==rid).ToList();
+            ViewBag.roomdetails = roomdetails;
+
+
+            var rtid=roomdetails[0].rtid;
+
+
+            var roomrtid=dal.Roomtypes.Where(x=>x.rtid==rtid).Select(a=>a.type);
+            ViewBag.roomrtid = roomrtid;
+
+            var roomtype = dal.Roomtypes.ToList();
+            ViewBag.roomtype = roomtype;
+
+           
+
+            /*var roomdetails = dal.Rooms.Where(x => x.rid = vm.rid).ToList();
             try
             {
                 foreach (var d in roomdetails)
@@ -132,10 +148,10 @@ namespace BBQ.Controllers
             Console.WriteLine(e);
 
         
-         var rtid = dal.roomtype.Where(x => x.type = vm.roomtype);
-     Return Redirect("UpdateRoom","AdRoom");
+         var rtid = dal.roomtype.Where(x => x.type = vm.roomtype);*/
+            return View();
 
-}
+        }
 
 
         [HttpPost]

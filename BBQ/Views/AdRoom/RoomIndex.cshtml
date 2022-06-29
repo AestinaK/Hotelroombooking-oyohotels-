@@ -244,15 +244,10 @@
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
-                                                                    <div class="drodown">
-                                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <ul class="link-list-opt no-bdr">
-                                                                                <li><a asp-controller="AdRoom" asp-route-id="@d.rid" asp-action="UpdateRoom" data-bs-toggle="modal" data-bs-target="#edit-room"><em class="icon ni ni-edit"></em><span>Edit</span></a></li>
-                                                                                <li><a href="#"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
+
+                                                             <a asp-controller="AdRoom" asp-route-id="@d.rid"  asp-action="UpdateRoom"  class="icon ni ni-edit">Edit</a>
+
+                                                                   
                                                                 </li>
                                                             </ul>
                                                         </div>
