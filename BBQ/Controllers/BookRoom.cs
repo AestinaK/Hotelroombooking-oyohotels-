@@ -15,6 +15,7 @@ namespace BBQ.Controllers
         public IActionResult Index(int hid, string sstart, string eend, int noofrooms,int rtid)
         {
 
+
             var start = DateOnly.Parse(sstart);
             var end = DateOnly.Parse(eend);
 
@@ -22,6 +23,20 @@ namespace BBQ.Controllers
             ViewBag.start = sstart;
             ViewBag.end = eend;
             ViewBag.hid = hid;
+
+            var review = dal.Commnets.ToList();
+            var ratingcount=review.Count;
+            int c = ratingcount - 1;
+            int ra = 0;
+           // List<var> reviews = new List<int>();
+            for (int i = 0; i <= c; i++)
+            {
+                ra= ra+ review[i].rating;
+
+            }
+
+
+            
 
             var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
             var available_rooms = dal.Rooms.Where(a => a.hid == hid).Where(b => b.rtid == rtid).Where(x => !booked_rooms.Contains(x.rid)).ToList();
