@@ -15,10 +15,13 @@ namespace BBQ.Controllers
             var end = DateOnly.Parse(eend);
 
             ViewBag.rooms = noofrooms;
+            ViewBag.start = sstart;
+            ViewBag.end = eend;
+            ViewBag.hid = hid;
 
              var booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
             var available_rooms = dal.Rooms.Where(a => a.hid == hid).Where(x => !booked_rooms.Contains(x.rid)).ToList();
-            var roomTypeGroup = available_rooms.GroupBy(x => x.rtid).ToList();
+            var roomTypeGroup = available_rooms.GroupBy(x => x.rtid).ToList(); 
              
             //var price = dal.Prices.Where(b => b.hid==hotelID).Where(x=>roomTypeGroup.Contains(x.rtid));
             //mailay ajha thapay ko 

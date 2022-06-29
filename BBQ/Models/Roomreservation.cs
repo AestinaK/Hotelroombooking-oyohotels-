@@ -12,6 +12,8 @@ namespace BBQ.Models
 
         public int roomid { get; set; }
 
+        public int hid { get; set; }
+
         public DateOnly checkin { get; set; }
 
         public DateOnly checkout { get; set; }

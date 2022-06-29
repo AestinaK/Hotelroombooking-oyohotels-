@@ -285,7 +285,7 @@
                                     <div class="text-muted">1985 reviews</div>
 
 
-                                    <a asp-controller="Usproductdetails" asp-action="Index"  class="btn btn-warning mt-4 text-white">UPDATE</a>
+                                    <a asp-controller="BookRoom" asp-action="Index" asp-route-rtid="@item.rtid" asp-route-hid="@ViewBag.hid" asp-route-sstart="@ViewBag.start" asp-route-eend="@ViewBag.end" asp-route-noofrooms="@ViewBag.rooms"  class="btn btn-warning mt-4 text-white">UPDATE</a>
                                     
                                    @* <input type="submit" asp-controller="Usproductdetails" asp-action=" hoteldetails" asp-route-roomid="@item.hid"  onclick="return userValid(); " value="View Details" class="btn btn-xl btn-primary"/> 
                                    
