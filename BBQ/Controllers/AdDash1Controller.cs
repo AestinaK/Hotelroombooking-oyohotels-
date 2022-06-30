@@ -7,6 +7,14 @@ namespace BBQ.Controllers
         public IActionResult Dash1Index()
 
         {
+            
+            return View();
+        }
+        //thapyaesai
+        public IActionResult Index()
+
+        {
+
             return View();
         }
     }
