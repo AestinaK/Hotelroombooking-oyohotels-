@@ -1,5 +1,4 @@
-﻿@page
-@model BBQ.Views.Photo.IndexModel
+﻿@using Microsoft.AspNetCore.Http;
 @{
     Layout = "_AdminLayout";  
 } 
@@ -20,9 +19,9 @@
                                         
                                               <div class="card card-bordered card-preview">
                                                            
-                                              <div class="card-inner">
+                                              @*<div class="card-inner">
                                                 <div class="preview-block">
-                                                    @*<span class="preview-title-lg overline-title">Default Preview</span>*@
+                                                    @*<span class="preview-title-lg overline-title">Default Preview</span>
                                                     
                                                         
                                                         
@@ -39,13 +38,16 @@
                                                         
                                                         </div>
                                                         </div>
-                                                        </div>
+                                                        </div>*@
+
+                                                        @{var hname = Context.Session.GetString("hname"); }
+                                                    
                                                             <div class="col-sm-6">
                                                             <div class="form-group">
                                                                 <label class="form-label" for="default-06">Upload Photos</label>
                                                                 <div class="form-control-wrap">
                                                                     <div class="form-file">
-                                                                        <input type="file" multiple class="form-file-input" id="customFile">
+                                                                        <input type="file" multiple name="img1" class="form-file-input" id="customFile">
                                                                         <label class="form-file-label" for="customFile">Choose file</label>
                                                                     </div>
                                                                 </div>
@@ -54,12 +56,75 @@
                     
                                                             
                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Upload Photos</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file" name="img2" multiple class="form-file-input" id="customFile">
+                                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                                        <input type="hidden" name="hname" value="@hname" />
+                                                                    </div>
+                                                                </div>
+                                                         
+                                                                </div>
+                    
+                                                            
+                                                           </div>
+
+
+                                                            <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Upload Photos</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file" name="img3" multiple class="form-file-input" id="customFile">
+                                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                         
+                                                                </div>
+                    
+                                                            
+                                                           </div>
+
+                                                            <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Upload Photos</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file" multiple name="img4" class="form-file-input" id="customFile">
+                                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                         
+                                                                </div>
+                    
+                                                            
+                                                           </div>
+
+                                                            <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Upload Photos</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file" multiple name="img5" class="form-file-input" id="customFile">
+                                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                         
+                                                                </div>
+                    
+                                                            
+                                                           </div>
+
                     </div>
                     </div>
                     <input type="submit" class="btn btn-primary" value="Save"/>
                  
                    
-                    <input type="submit" class="btn btn-danger" value="Cancel"/>
+                  
                     
                    </form>
                 

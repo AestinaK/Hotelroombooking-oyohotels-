@@ -13,18 +13,41 @@ using System.IO;
 
 namespace BBQ.Controllers
 {
-    /* private readonly IWebHostEnvironment _webHostEnvironment;
-     public ReportController(IWebHostEnvironment webHostEnvironment)
-     {
-         _webHostEnvironment = webHostEnvironment;
-     }*/
+    
 
 
     public class PhotoController : Controller
     {
-        DataContext dal = new DataContext();
-        public IActionResult Index()
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public PhotoController(IWebHostEnvironment webHostEnvironment)
         {
+            _webHostEnvironment = webHostEnvironment;
+        }
+
+        DataContext dal = new DataContext();
+
+
+        public async Task<string> UploadImage(string folderpath, IFormFile file)
+        {
+            folderpath += Guid.NewGuid().ToString() + "_" + file.FileName;
+            string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folderpath);
+            await file.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+            return "/" + folderpath;
+        }
+
+
+
+        public IActionResult Index(Photovm vm)
+        {
+
+
+            Photo upload=new Photo()
+            {
+
+
+
+            };
+
             return View();
         }
        

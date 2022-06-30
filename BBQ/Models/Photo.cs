@@ -8,8 +8,8 @@ namespace BBQ.Models
     {
         [Key]
         public int pid { get; set; }
-        public string photos { get; set; }
+        public string photosurl { get; set; }
      
-        public string hid { get; set; }
+        public int hid { get; set; }
     }
 }

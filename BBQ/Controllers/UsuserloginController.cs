@@ -50,6 +50,7 @@ namespace BBQ.Controllers
                 string role=sessionlist[0].role;
                 string hm = sessionlist[0].hname;
 
+                
                 HttpContext.Session.SetString("role", role);
                 HttpContext.Session.SetString("hname", hm);
                 HttpContext.Session.SetString("email", em);
