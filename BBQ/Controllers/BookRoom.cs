@@ -12,7 +12,7 @@ namespace BBQ.Controllers
         }*/
 
         
-        public IActionResult Index(int hid, string sstart, string eend, int noofrooms,int rtid)
+        public IActionResult Index(int hid,string user, string sstart, string eend, int noofrooms,int rtid)
         {
 
 
@@ -39,17 +39,17 @@ namespace BBQ.Controllers
                 for (int i = 0; i <=nf; i++)
             {
                 var r = available_rooms[i].rid;
-                    
-                 bookrooms.Add(new Roomreservation()
-                 {
-                     hid = hid,
-                     checkin = start,
-                     checkout = end,
-                     roomid = r,
-                     
-                     userid = 132
 
-                 });
+                    bookrooms.Add(new Roomreservation()
+                    {
+                        hid = hid,
+                        checkin = start,
+                        checkout = end,
+                        roomid = r,
+
+                        user = user
+
+                    }) ;
 
 
 
@@ -100,7 +100,7 @@ namespace BBQ.Controllers
 
             ViewBag.hname = hotelname;
 
-            var roomes = dal.Roomtypes.Where(x => x.rtid == rtidd).ToList();
+            var roomes = dal.Roomtypes.Where(x => x.rtid == rtid).ToList();
             var roomt = roomes[0].type;
             ViewBag.roomtype = roomt;
 

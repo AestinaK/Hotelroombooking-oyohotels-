@@ -1,5 +1,5 @@
-﻿@page
-@model BBQ.Views.Usproductdetails.IndexModel
+﻿@using Microsoft.AspNetCore.Http;
+
 @{
     Layout = "_Landing";
 }
@@ -31,6 +31,8 @@
                                 </div>
                             </div><!-- .nk-block-head -->
                             <div class="nk-block">
+                                @{var role = Context.Session.GetString("role"); }
+                                 @{var email = Context.Session.GetString("email"); }
                                 <div class="card card-bordered">
                                     <div class="card-inner">
                                         <div class="row pb-5">
@@ -291,7 +293,7 @@
                                     <div class="text-muted">1985 reviews</div>
 
 
-                                    <a asp-controller="BookRoom" asp-action="Index" asp-route-rtid="@item.rtid" asp-route-hid="@ViewBag.hid" asp-route-sstart="@ViewBag.start" asp-route-eend="@ViewBag.end" asp-route-noofrooms="@ViewBag.rooms"  onclick="return confirm('Are you sure to book Room of @item.type type')" class="btn btn-warning mt-4 text-white">Book </a>
+                                    <a asp-controller="BookRoom" asp-action="Index" asp-route-rtid="@item.rtid" asp-route-user="@email" asp-route-hid="@ViewBag.hid" asp-route-sstart="@ViewBag.start" asp-route-eend="@ViewBag.end" asp-route-noofrooms="@ViewBag.rooms"  onclick="return confirm('Are you sure to book Room of @item.type type')" class="btn btn-warning mt-4 text-white">Book </a>
                                     
                                    @* <input type="submit" asp-controller="Usproductdetails" asp-action=" hoteldetails" asp-route-roomid="@item.hid"  onclick="return userValid(); " value="View Details" class="btn btn-xl btn-primary"/> 
                                    

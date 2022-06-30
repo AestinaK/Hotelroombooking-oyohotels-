@@ -18,6 +18,6 @@ namespace BBQ.Models
 
         public DateOnly checkout { get; set; }
 
-        public int userid { get; set; }
+        public string user { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿@page
-@model BBQ.Views.BookRoom.IndexModel
+﻿@using Microsoft.AspNetCore.Http;
 @{
 
     Layout = "_Landing";
@@ -16,10 +15,12 @@
                                         <h3 class="nk-block-title page-title">Invoice <strong class="text-primary small">#746F5K2</strong></h3>
                                         <div class="nk-block-des text-soft">
                                             <ul class="list-inline">
-                                                <li>Created At: <span class="text-base">18 Dec, 2019 01:02 PM</span></li>
+                                                <li>Created At: <span class="text-base">31 june, 2012 01:02 PM</span></li>
                                             </ul>
                                         </div>
                                     </div>
+                                    @{var role = Context.Session.GetString("role"); }
+                                 @{var email = Context.Session.GetString("email"); }
                                     <div class="nk-block-head-content">
                                         <a href="html/invoice-list.html" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
                                         <a href="html/invoice-list.html" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
@@ -35,11 +36,12 @@
                                         <div class="invoice-brand text-center">
                                             <img src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="">
                                         </div>
+                                        
                                         <div class="invoice-head">
                                             <div class="invoice-contact">
                                                 <span class="overline-title">Invoice To</span>
                                                 <div class="invoice-contact-info">
-                                                    <h4 class="title">Bishwadip Karki</h4>
+                                                    <h4 class="title">@email</h4>
                                                     <ul class="list-plain">
                                                         <li><em class="icon ni ni-map-pin-fill"></em><span>House #65, 4328 Bihani Tole<br>Birtamode, Nepal</span></li>
                                                         <li><em class="icon ni ni-call-fill"></em><span>+9779824977469</span></li>

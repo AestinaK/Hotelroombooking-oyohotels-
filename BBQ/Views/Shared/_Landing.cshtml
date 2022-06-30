@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
 <html lang="zxx" class="js">
 
 <head>
@@ -8,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="./userside/images/favicon.png">
-    <!-- Page Title  -->
-    <title>Dashboard | DashLite Admin Template</title>
+@*    <link rel="shortcut icon" href="./userside/images/favicon.png">
+*@    <!-- Page Title  -->
+    <title>Booking.com | perfect for your ideal hotel</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="~/userside/assets/css/dashlite.css?ver=3.0.0">
     <link id="skin-default" rel="stylesheet" href="~/userside/assets/css/theme.css?ver=3.0.0">
@@ -720,9 +721,12 @@
                                                 <div class="user-avatar">
                                                     <span>AB</span>
                                                 </div>
+                                                
+                                                     @{var role = Context.Session.GetString("role"); }
+                                                     @{var email = Context.Session.GetString("email"); }
                                                 <div class="user-info">
-                                                    <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                    <span class="sub-text">info@softnio.com</span>
+                                                    <span class="lead-text">@role</span>
+                                                    <span class="sub-text">@email</span>
                                                 </div>
                                                 <div class="user-action">
                                                     <a class="btn btn-icon me-n2" href="~/userside/html/user-profile-setting.html"><em class="icon ni ni-setting"></em></a>
@@ -763,7 +767,7 @@
      <div class="nk-footer bg-white">
                 <div class="container-fluid">
                     <div class="nk-footer-wrap">
-                        <div class="nk-footer-copyright"> &copy; 2022 Dashlite. Template by <a href="#">Softnio</a>
+                        <div class="nk-footer-copyright"> &copy; 2022 Booking.com. Template by <a href="#">The Wheels</a>
                         </div>
                         <div class="nk-footer-links">
                             <ul class="nav nav-sm">

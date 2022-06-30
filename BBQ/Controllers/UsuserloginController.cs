@@ -22,6 +22,18 @@ namespace BBQ.Controllers
             if (userlist.Count() == 1 && userlist[0].email.Equals(email) && userlist[0].password.Equals(password) && userlist[0].role.Equals("user"))
 
             {
+                var sessionlist = dal.Ususerlogins.Where(X => X.email.Equals(email)).Where(X => X.password.Equals(password)).ToList();
+
+                string em = sessionlist[0].email;
+                string pw = sessionlist[0].password;
+                string role = sessionlist[0].role;
+                
+
+                HttpContext.Session.SetString("role", role);
+                
+                HttpContext.Session.SetString("email", em);
+                HttpContext.Session.SetString("password", pw);
+
                 return Redirect("/Landing/Index");
             }
 
