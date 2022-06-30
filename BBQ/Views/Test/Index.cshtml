@@ -23,7 +23,7 @@
                         <div class="row justify-content-center" >
                             <div class="col-xl-10">
                                 <div class="card overflow-hidden p-2 bg-light" >
-
+                                    <form method="post" asp-controller="Test" asp-action="Index">
                                    <div class="row gy-4">
                                                        @* <div class="col-lg-4 col-sm-6">
                                                             <div class="form-group">
@@ -40,7 +40,7 @@
                                                                     <div class="form-icon form-icon-right xl">
                                                                         <em class="icon ni ni-search"></em>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-xl form-control-outlined" value="@ViewBag.address" id="outlined-right-icon">
+                                                                    <input type="text" class="form-control form-control-xl form-control-outlined" name="address" value="@ViewBag.address" id="outlined-right-icon">
                                                                     <label class="form-label-outlined" for="outlined-right-icon">Where are you going?</label>
                                                                 </div>
                                                             </div>
@@ -52,7 +52,7 @@
                                                                     <div class="form-icon form-icon-right xl">
                                                                         <em class="icon ni ni-calendar-alt"></em>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker" value="@ViewBag.checkin" id="outlined-date-picker">
+                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker" name="start" value="@ViewBag.checkin" id="outlined-date-picker">
                                                                     <label class="form-label-outlined" for="outlined-date-picker">Check In</label>
                                                                 </div>
                                                             </div>
@@ -65,7 +65,7 @@
                                                                     <div class="form-icon form-icon-right xl">
                                                                         <em class="icon ni ni-calendar-alt"></em>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker" value="@ViewBag.checkout" id="outlined-date-picker">
+                                                                    <input type="text" class="form-control form-control-xl form-control-outlined date-picker" name="end" value="@ViewBag.checkout" id="outlined-date-picker">
                                                                     <label class="form-label-outlined" for="outlined-date-picker">Check Out</label>
                                                                 </div>
                                                             </div>
@@ -76,7 +76,7 @@
                                                           <div class="col-lg-4 col-sm-6">
                                                             <div class="form-group">
                                                                 <div class="form-control-wrap">
-                                                                    <select class="form-select js-select2" data-ui="xl" id="outlined-select">
+                                                                    <select name="noofrooms" class="form-select js-select2" data-ui="xl" id="outlined-select">
                                                                         <option >@ViewBag.noofroom</option>
                                                                         <option >1</option>
                                                                         <option >2</option>
@@ -92,7 +92,7 @@
                                                             <div class="form-group">
                                                                 <div class="form-control-wrap">
                                                                     
-                                                                    <a href="#" class="btn btn-xl btn-primary">Search</a>
+                                                                    <input type="submit" onclick="return userValid(); " value="search" class="btn btn-xl btn-primary"/> 
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -100,6 +100,7 @@
 
                                                        
                                                     </div>
+                                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +120,7 @@
                             <div class="nk-block-head nk-block-head-sm">
                                 <div class="nk-block-between">
                                     <div class="nk-block-head-content">
-                                        <h3 class="nk-block-title page-title">Products</h3>
+                                        <h3 class="nk-block-title page-title">Hotels</h3>
                                     </div><!-- .nk-block-head-content -->
                                     <div class="nk-block-head-content">
                                         <div class="toggle-wrap nk-block-tools-toggle">
@@ -131,24 +132,15 @@
                                                             <div class="form-icon form-icon-right">
                                                                 <em class="icon ni ni-search"></em>
                                                             </div>
-                                                            <input type="text" class="form-control" id="default-04" placeholder="Quick search by id">
+                                                            <input type="text" class="form-control" id="default-04" placeholder="Quick search by Hotel">
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle dropdown-indicator btn btn-primary btn-white" data-bs-toggle="dropdown">Status</a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><span>New Items</span></a></li>
-                                                                    <li><a href="#"><span>Featured</span></a></li>
-                                                                    <li><a href="#"><span>Out of Stock</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </li>
                                                     <li class="nk-block-tools-opt">
                                                         <a href="#" data-target="addProduct" class="toggle btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                                        <a href="#" data-target="addProduct" class="toggle btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Filter</span></a>
+                                                        <a href="#" data-target="addProduct" class="toggle btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span> Filter</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -175,34 +167,42 @@
                 <div class="card card-body">
                             <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
                                 <div class="mr-2 mb-3 mb-lg-0">
-                                    <a asp-controller="Test" asp-action="hoteldetails">
-                                    <img  src="~/userside/images/product/hotel3.jpg" width="150" height="150" alt="">
-                                   </a>
+                                    <a >
+                                        @foreach(var img in ViewBag.image){
+                                            if(@item.hid==img.hid){
+                                    <img  src="@img.url" width="150" height="150" alt="">
+                                    
+                                            }
+                                        }
+                                </a>
                                 </div>
 
                                 <div class="media-body">
                                     <h4 class="media-title font-weight-semibold">
-                                        <a asp-controller="Test" asp-action="hoteldetails" data-abc="true">@item.name</a>
+                                        <a  data-abc="true">@item.name</a>
                                     </h4>
 
                                     <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
-                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">@item.address </a></li>
-                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">Thamel</a></li>
+                                        <li class="list-inline-item"><a  class="text-muted" data-abc="true">@item.address </a></li>
+                                        
                                     </ul>
 
                                     
-                                    <p class="mb-3"> <em class="bi bi-arrow-right"></em> free wifi <em class="bi bi-arrow-right"></em> TEst <em class="bi bi-arrow-right"></em> free wifi </p>
+                                    <p class="mb-3"> <em class="bi bi-arrow-right"></em> free wifi </p> 
+                                   <p> <em class="bi bi-arrow-right"></em> AC </p>
+                                    <p><em class="bi bi-arrow-right"> See Availibity for more </em>  </p>
                                    
                                        
 
                                     <ul class="list-inline list-inline-dotted mb-0">
+                                        <li class="list-inline-item"><p>Price based on</p></li>
                                         <li class="list-inline-item"> <p asp-controller="Test" asp-action="hoteldetails"  style="font-weight:bold"> Classic</p> </li>
-                                        <li class="list-inline-item"><p>1 full bed</p></li>
+                                        
                                     </ul>
                                 </div>
 
                                 <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
-                                    <h3 class="mb-0 font-weight-semibold">@item.price</h3>
+                                    <h3 class="mb-0 font-weight-semibold">Rs @item.price</h3>
 
                                     <div>
                                         <i class="icon ni ni-star-fill"></i>
@@ -213,10 +213,10 @@
 
                                     </div>
 
-                                    <div class="text-muted">1985 reviews</div>
+                                    <div class="text-muted">5 reviews</div>
 
 
-                                    <a asp-controller="Usproductdetails" asp-action="Index" asp-route-hid="@item.hid" asp-route-sstart="@ViewBag.checkin"  asp-route-eend="@ViewBag.checkout" asp-route-noofrooms="@ViewBag.noofroom" class="btn btn-warning mt-4 text-white">UPDATE</a>
+                                    <a asp-controller="Usproductdetails" asp-action="Index" asp-route-hid="@item.hid" asp-route-sstart="@ViewBag.checkin"  asp-route-eend="@ViewBag.checkout" asp-route-noofrooms="@ViewBag.noofroom" class="btn btn-warning mt-4 text-white">See Availibility</a>
                                     
                                    @* <input type="submit" asp-controller="Usproductdetails" asp-action=" hoteldetails" asp-route-roomid="@item.hid"  onclick="return userValid(); " value="View Details" class="btn btn-xl btn-primary"/> 
                                    
@@ -267,7 +267,7 @@
                                         <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true">Mobiles</a></li>*@
                                     </ul>
 
-                                    <p class="mb-3">256 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 15MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display </p>
+                                    <p class="mb-3">oops ! we couldnt find more hotels for you ,but what we can do is provide you assistant to hotel for your nearest stay hehe happy to serve you at any time. </p>
 
                                     <ul class="list-inline list-inline-dotted mb-0">
                                        @* <li class="list-inline-item">All items from <a href="#" data-abc="true">Mobile junction</a></li>

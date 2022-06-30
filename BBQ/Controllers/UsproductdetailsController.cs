@@ -19,6 +19,12 @@ namespace BBQ.Controllers
             ViewBag.end = eend;
             ViewBag.hid = hid;
 
+            var hehe = dal.Hotelss.Find(hid);
+            ViewBag.hehe = hehe;
+
+            var img=dal.Photos.Where(x=>x.hid==hid).ToList();
+            ViewBag.img= img;
+
 
             var review = dal.Comments.Where(x=>x.hid==hid).ToList();
             ViewBag.reviews = review;

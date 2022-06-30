@@ -47,6 +47,15 @@ namespace BBQ.Controllers
 
 
             };
+            Hphoto Hupload1 = new Hphoto()
+            {
+                hid = hid,
+                url = await UploadImage(folderpath, vm.img1)
+
+
+
+            };
+
             Photo upload2 = new Photo()
             {
                 hid = hid,
@@ -79,6 +88,7 @@ namespace BBQ.Controllers
 
 
             };
+            dal.Hphotos.Add(Hupload1);
             dal.Photos.Add(upload1);
             dal.Photos.Add(upload2);
             dal.Photos.Add(upload3);

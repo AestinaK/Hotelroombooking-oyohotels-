@@ -54,23 +54,19 @@
                                         <span class="nk-menu-icon"><em class="icon ni ni-calendar-booking-fill"></em></span>
                                         <span class="nk-menu-text">Bookings</span>
                                     </a>
-                                   
-                                    <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a href="html/hotel/bookings.html" class="nk-menu-link"><span class="nk-menu-text">All Bookings</span></a>
-                                        </li>
-
-                                        <li class="nk-menu-item">
-                                            <a href="html/hotel/booking-add.html" class="nk-menu-link"><span class="nk-menu-text">Add Booking</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/hotel/booking-edit.html" class="nk-menu-link"><span class="nk-menu-text">Edit Booking</span></a>
-                                        </li>
-                                    </ul>
-
-                                     @{var hname = Context.Session.GetString("hname"); }
+                                    @{var hname = Context.Session.GetString("hname"); }
+                                    @{var pw = Context.Session.GetString("password"); }
                                                      @{var role = Context.Session.GetString("role"); }
                                                      @{var email = Context.Session.GetString("email"); }
+                                    <ul class="nk-menu-sub">
+                                        <li class="nk-menu-item">
+                                            <a asp-controller="AdBooking" asp-route-hname="@hname" asp-action="BookingIndex" class="nk-menu-link"><span class="nk-menu-text">All Bookings</span></a>
+                                        </li>
+
+                                        
+                                    </ul>
+
+                                    
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item has-sub">
                                     <a  class="nk-menu-link nk-menu-toggle" asp-area="" >
@@ -269,22 +265,20 @@
                                                         <span>AB</span>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span class="lead-text">Ankit</span>
-                                                        <span class="sub-text">ankit@gmail.com</span>
+                                                        <span class="lead-text">@role</span>
+                                                        <span class="sub-text">@email</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/hotel/settings.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/hotel/settings-activity-log.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
-                                                </ul>
+                                                    <li><a asp-controller="Ususerlogin" asp-action="changepassword" asp-route-pw="@pw" ><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                    <li><a asp-controller="Ususerlogin"asp-action="changepassword" asp-route-pw="@pw" ><em class="icon ni ni-user-alt"></em><span>Change password</span></a></li>
+                                                     </ul>
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li><a asp-controller="Ususerlogin" asp-action="logout" ><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -24,10 +24,7 @@
                                             <p>An ideal hotel for your vaccation</p>
                                         </div>
                                     </div>
-                                    <div class="nk-block-head-content">
-                                        <a href="html/product-list.html" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
-                                        <a href="html/product-list.html" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
-                                    </div>
+                                    
                                 </div>
                             </div><!-- .nk-block-head -->
                             <div class="nk-block">
@@ -39,57 +36,34 @@
                                             <div class="col-lg-6 col-xxl-5">
                                                 <div class="product-gallery me-xl-1 me-xxl-5">
                                                     <div class="slider-init" id="sliderFor" data-slick='{"arrows": false, "fade": true, "asNavFor":"#sliderNav", "slidesToShow": 1, "slidesToScroll": 1}'>
+                                                      
+                                                        @foreach(var im in ViewBag.img){
                                                         <div class="slider-item rounded">
-                                                            <img src="~/userside/images/product/hotel2.jpg" class="rounded w-100" alt="">
+                                                            <img src="@im.photosurl" class="rounded w-100" alt="">
                                                         </div>
-                                                        <div class="slider-item rounded">
-                                                            <img src="~/userside/images/product/hotel3.jpg" class="rounded w-100" alt="">
-                                                        </div>
-                                                        <div class="slider-item rounded">
-                                                            <img src="~/userside/images/product/hotel4.jpg" class="rounded w-100" alt="">
-                                                        </div>
-                                                        <div class="slider-item rounded">
-                                                            <img src="~/userside/images/product/hotel8.jpg" class="rounded w-100" alt="">
-                                                        </div>
-                                                        <div class="slider-item rounded">
-                                                            <img src="~/userside/images/product/hotel5.jpg" class="rounded w-100" alt="">
-                                                        </div>
+                                            }
+                                                        
+                                                        
+                                                        
                                                     </div><!-- .slider-init -->
                                                     <div class="slider-init slider-nav" id="sliderNav" data-slick='{"arrows": false, "slidesToShow": 5, "slidesToScroll": 1, "asNavFor":"#sliderFor", "centerMode":true, "focusOnSelect": true, 
                                 "responsive":[ {"breakpoint": 1539,"settings":{"slidesToShow": 4}}, {"breakpoint": 768,"settings":{"slidesToShow": 3}}, {"breakpoint": 420,"settings":{"slidesToShow": 2}} ]
                             }'>
+                                            @foreach(var im in ViewBag.img){
                                                         <div class="slider-item">
                                                             <div class="thumb">
-                                                                <img src="~/userside/images/product/hotel2.jpg" class="rounded" alt="">
+                                                                <img src="@im.photosurl" class="rounded" alt="">
                                                             </div>
                                                         </div>
-                                                        <div class="slider-item">
-                                                            <div class="thumb">
-                                                                <img src="~/userside/images/product/hotel3.jpg" class="rounded" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="slider-item">
-                                                            <div class="thumb">
-                                                                <img src="~/userside/images/product/hotel4.jpg" class="rounded" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="slider-item">
-                                                            <div class="thumb">
-                                                                <img src="~/userside/images/product/hotel8.jpg" class="rounded" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="slider-item">
-                                                            <div class="thumb">
-                                                                <img src="~/userside/images/product/hotel5.jpg" class="rounded" alt="">
-                                                            </div>
-                                                        </div>
+                                            }
+                                                       
                                                     </div><!-- .slider-nav -->
                                                 </div><!-- .product-gallery -->
                                             </div><!-- .col -->
                                             <div class="col-lg-6 col-xxl-5">
                                                 <div class="product-info mt-5 me-xxl-5">
-                                                    <h4 class="product-price text-primary">$78.00 <small class="text-muted fs-14px">$98.00</small></h4>
-                                                    <h2 class="product-title">White Vintage Hotel</h2>
+                                                    <h4 class="product-price text-primary">Rs @ViewBag.hehe.price </h4>
+                                                    <h2 class="product-title">@ViewBag.hehe.name</h2>
                                                     <div class="product-rating">
                                                         <ul class="rating">
 
@@ -100,23 +74,12 @@
                                                 
                                                             
                                                         </ul>
-                                                        <div class="amount">(2 Reviews)</div>
+                                                        <div class="amount">(@ViewBag.Counts Reviews)</div>
                                                     </div><!-- .product-rating -->
                                                     <div class="product-excrept text-soft">
-                                                        <p class="lead">I must explain to you how all this mistaken idea of denoun cing ple praising pain was born and I will give you a complete account of the system, and expound the actual teaching.</p>
+                                                        <p class="lead">I must explain to you how we can reach to this hotel ,firstly it is located in the  heart of @ViewBag.hehe.address. you just need to walk few minute from center of city.</p>
                                                     </div>
-                                                    <div class="product-meta">
-                                                        <ul class="d-flex g-3 gx-5">
-                                                            <li>
-                                                                <div class="fs-14px text-muted">Type</div>
-                                                                <div class="fs-16px fw-bold text-secondary">Sweet Room</div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="fs-14px text-muted">Room  Number</div>
-                                                                <div class="fs-16px fw-bold text-secondary"> 290XT</div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                    
                                                    @* <div class="product-meta">
                                                         <h6 class="title">Color</h6>
                                                         <ul class="custom-control-group">
@@ -175,23 +138,7 @@
                                                             </li>
                                                         </ul>
                                                     </div>*@<!-- .product-meta -->
-                                                    <div class="product-meta">
-                                                        <ul class="d-flex flex-wrap ailgn-center g-2 pt-1">
-                                                            <li class="w-140px">
-                                                                <div class="form-control-wrap number-spinner-wrap">
-                                                                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                                                                    <input type="number" class="form-control number-spinner" value="0">
-                                                                    <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <button class="btn btn-primary">Book</button>
-                                                            </li>
-                                                            <li class="ms-n1">
-                                                                <button class="btn btn-icon btn-trigger text-primary"><em class="icon ni ni-heart"></em></button>
-                                                            </li>
-                                                        </ul>
-                                                    </div><!-- .product-meta -->
+                                                   <!-- .product-meta -->
                                                 </div><!-- .product-info -->
                                             </div><!-- .col -->
                                         </div><!-- .row -->
@@ -208,8 +155,8 @@
                                             </div><!-- .col -->
                                             <div class="col-lg-7">
                                                 <div class="product-details entry me-xxl-3 wide-md">
-                                                    <h3>Product details of Comfy cushions</h3>
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Neque porro quisquam est, qui dolorem consectetur, adipisci velit.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+                                                    <h3>Hotel Facilities of @ViewBag.hehe.name</h3>
+                                                    <p> Following are the top facilities and aminities ,for more please visit our hotel.</p>
                                                     <ul class="list list-sm list-checked">
                                                         <li>WiFi</li>
                                                         <li>AC</li>
@@ -222,9 +169,8 @@
                                                         <li>Swimming pool</li>
 
                                                     </ul>
-                                                    <p>Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.</p>
-                                                    <h3>The best seats in the house</h3>
-                                                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings. Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.</p>
+                                                    <h3>The best hotel in the town</h3>
+                                                    <p>I must explain to you how all this hotel idea was formed but let discus that face to face for now just simply book your room.</p>
                                                 </div>
                                             </div><!-- .col -->
                                         </div><!-- .row -->
@@ -246,30 +192,23 @@
                             <div class="card card-body">
                             <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
                                 <div class="mr-2 mb-3 mb-lg-0">
-                                    <a asp-controller="Test" asp-action="hoteldetails">
+                                    <a >
                                     <img  src="~/userside/images/product/hotel3.jpg" width="150" height="150" alt="">
                                    </a>
                                 </div>
 
                                 <div class="media-body">
                                     <h4 class="media-title font-weight-semibold">
-                                        <a asp-controller="Test" asp-action="hoteldetails" data-abc="true">@item.type</a>
+                                        <a  data-abc="true">@item.type</a>
                                     </h4>
 
-                                    <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
-                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">birtamode </a></li>
-                                        <li class="list-inline-item"><a asp-controller="Test" asp-action="hoteldetails" class="text-muted" data-abc="true">Thamel</a></li>
-                                    </ul>
+                                    
 
                                     
-                                    <p class="mb-3"> <em class="bi bi-arrow-right"></em> free wifi <em class="bi bi-arrow-right"></em> TEst <em class="bi bi-arrow-right"></em> free wifi </p>
                                    
                                        
 
-                                    <ul class="list-inline list-inline-dotted mb-0">
-                                        <li class="list-inline-item"> <p asp-controller="Test" asp-action="hoteldetails"  style="font-weight:bold"> Classic</p> </li>
-                                        <li class="list-inline-item"><p>1 full bed</p></li>
-                                    </ul>
+                                    
                                 </div>
 
                                 <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
@@ -279,18 +218,9 @@
                                                          <h3 class="mb-0 font-weight-semibold">@(@p.price * @ViewBag.rooms)</h3>
                                                     }
                                                     }
-                                                    <h3 class="mb-0 font-weight-semibold">RS 2000</h3>
+                                                    
 
-                                    <div>
-                                        <i class="icon ni ni-star-fill"></i>
-                                        <i class="icon ni ni-star-fill"></i>
-                                        <i class="icon ni ni-star-fill"></i>
-                                        <i class="icon ni ni-star-fill"></i>
-
-
-                                    </div>
-
-                                    <div class="text-muted">1985 reviews</div>
+                                    
 
 
                                     <a asp-controller="BookRoom" asp-action="Index" asp-route-rtid="@item.rtid" asp-route-user="@email" asp-route-hid="@ViewBag.hid" asp-route-sstart="@ViewBag.start" asp-route-eend="@ViewBag.end" asp-route-noofrooms="@ViewBag.rooms"  onclick="return confirm('Are you sure to book Room of @item.type type')" class="btn btn-warning mt-4 text-white">Book </a>
@@ -325,7 +255,7 @@
                                         <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true">Mobiles</a></li>*@
                                     </ul>
 
-                                    <p class="mb-3">256 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 15MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display </p>
+                                    <p class="mb-3">oops ! we couldnt find more Rooms for you ,but what we can do is provide you assistant to hotel for your nearest stay hehe happy to serve you at any time.  </p>
 
                                     <ul class="list-inline list-inline-dotted mb-0">
                                        @* <li class="list-inline-item">All items from <a href="#" data-abc="true">Mobile junction</a></li>
