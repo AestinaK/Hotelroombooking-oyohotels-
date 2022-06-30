@@ -1,4 +1,69 @@
 ﻿@page
 @model BBQ.Views.Photo.IndexModel
 @{
-}
+    Layout = "_AdminLayout";  
+} 
+
+               <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <div class="components-preview wide-md mx-auto">
+                                    <div class="nk-block-head nk-block-head-lg wide-sm">
+                                        
+                                            <h2 class="nk-block-title fw-normal">Photo</h2>
+                                            
+                                        </div>
+                                    </div>
+}                                           <form method="post" asp-controller="Photo" asp-action="Index">
+                                            <div class="nk-block nk-block-lg">
+                                        
+                                              <div class="card card-bordered card-preview">
+                                                           
+                                              <div class="card-inner">
+                                                <div class="preview-block">
+                                                    @*<span class="preview-title-lg overline-title">Default Preview</span>*@
+                                                    
+                                                        
+                                                        
+                                                        <div class="row gy-4">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-05">Room Type </label>
+                                                                <div class="form-control-wrap">
+                                                                    
+                                                                    <input type="text"  class="form-control" name="type" id="default-05" placeholder="enter room type">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                            <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Upload Photos</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file" multiple class="form-file-input" id="customFile">
+                                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                         
+                                                                </div>
+                    
+                                                            
+                                                           </div>
+                    </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Save"/>
+                 
+                   
+                    <input type="submit" class="btn btn-danger" value="Cancel"/>
+                    
+                   </form>
+                
+                </div>
+                </div>
+                </div>
+                </div>

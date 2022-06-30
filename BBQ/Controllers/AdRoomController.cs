@@ -174,20 +174,11 @@ namespace BBQ.Controllers
 
 
 
-        //for facilities and services
-
-        public IActionResult FacilitiesIndex()
-
-
-
-        {
-            return View();
-        }
 
 
 
 
-
+       //Price
         public IActionResult Price(string hname)
         {
             
@@ -215,6 +206,22 @@ namespace BBQ.Controllers
           return View();
         
         }
+
+
+
+
+
+
+        //for facilities and services
+
+        public IActionResult FacilitiesIndex()
+
+
+
+        {
+            return View();
+        }
+
 
 
         //for amenities

@@ -81,11 +81,12 @@
                                                      
                                                    
                                     <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a  class="nk-menu-link"><span class="nk-menu-text">General Info</span></a>
-                                        </li>
+                                       
                                         <li class="nk-menu-item">
                                             <a asp-controller="AdRoom" asp-route-hname="@hname" asp-action="RoomIndex" class="nk-menu-link"><span class="nk-menu-text">Room Details</span></a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a asp-controller="AdRoom"  asp-action="RoomTypeIndex" class="nk-menu-link"><span class="nk-menu-text">Create Room</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a asp-area="" asp-controller="AdRoom" asp-action="FacilitiesIndex" class="nk-menu-link"><span class="nk-menu-text">Facilities & Services</span></a>
