@@ -14,7 +14,7 @@
                                             
                                         </div>
                                     </div>
-}                                           <form method="post" asp-controller="Photo" asp-action="Index">
+}                                           <form method="post" asp-controller="Photo" asp-action="upload" enctype="multipart/form-data">
                                             <div class="nk-block nk-block-lg">
                                         
                                               <div class="card card-bordered card-preview">
@@ -47,22 +47,7 @@
                                                                 <label class="form-label" for="default-06">Upload Photos</label>
                                                                 <div class="form-control-wrap">
                                                                     <div class="form-file">
-                                                                        <input type="file" multiple name="img1" class="form-file-input" id="customFile">
-                                                                        <label class="form-file-label" for="customFile">Choose file</label>
-                                                                    </div>
-                                                                </div>
-                                                         
-                                                                </div>
-                    
-                                                            
-                                                           </div>
-
-                                                            <div class="col-sm-6">
-                                                            <div class="form-group">
-                                                                <label class="form-label" for="default-06">Upload Photos</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-file">
-                                                                        <input type="file" name="img2" multiple class="form-file-input" id="customFile">
+                                                                        <input type="file"  name="img1" class="form-file-input" id="img1" accept="image/*">
                                                                         <label class="form-file-label" for="customFile">Choose file</label>
                                                                         <input type="hidden" name="hname" value="@hname" />
                                                                     </div>
@@ -79,8 +64,9 @@
                                                                 <label class="form-label" for="default-06">Upload Photos</label>
                                                                 <div class="form-control-wrap">
                                                                     <div class="form-file">
-                                                                        <input type="file" name="img3" multiple class="form-file-input" id="customFile">
+                                                                        <input type="file"  name="img2" class="form-file-input" id="img1" accept="image/*">
                                                                         <label class="form-file-label" for="customFile">Choose file</label>
+                                                                        <input type="hidden" name="hname" value="@hname" />
                                                                     </div>
                                                                 </div>
                                                          
@@ -94,8 +80,9 @@
                                                                 <label class="form-label" for="default-06">Upload Photos</label>
                                                                 <div class="form-control-wrap">
                                                                     <div class="form-file">
-                                                                        <input type="file" multiple name="img4" class="form-file-input" id="customFile">
+                                                                        <input type="file"  name="img3" class="form-file-input" id="img1" accept="image/*">
                                                                         <label class="form-file-label" for="customFile">Choose file</label>
+                                                                        <input type="hidden" name="hname" value="@hname" />
                                                                     </div>
                                                                 </div>
                                                          
@@ -109,8 +96,9 @@
                                                                 <label class="form-label" for="default-06">Upload Photos</label>
                                                                 <div class="form-control-wrap">
                                                                     <div class="form-file">
-                                                                        <input type="file" multiple name="img5" class="form-file-input" id="customFile">
+                                                                        <input type="file"  name="img4" class="form-file-input" id="img1" accept="image/*">
                                                                         <label class="form-file-label" for="customFile">Choose file</label>
+                                                                        <input type="hidden" name="hname" value="@hname" />
                                                                     </div>
                                                                 </div>
                                                          
@@ -118,6 +106,25 @@
                     
                                                             
                                                            </div>
+
+
+                                                            <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Upload Photos</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file"  name="img5" class="form-file-input" id="img1" accept="image/*">
+                                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                                        <input type="hidden" name="hname" value="@hname" />
+                                                                    </div>
+                                                                </div>
+                                                         
+                                                                </div>
+                    
+                                                            
+                                                           </div>
+
+                                                            
 
                     </div>
                     </div>

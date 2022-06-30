@@ -49,4 +49,8 @@
     <UpToDateCheckInput Remove="Views\AdRoom\updroom.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\hotelimage\" />
+  </ItemGroup>
+
 </Project>

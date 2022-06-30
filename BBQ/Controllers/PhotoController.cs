@@ -1,12 +1,6 @@
 ﻿using BBQ.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using System.IO;
+
 
 
 
@@ -26,7 +20,10 @@ namespace BBQ.Controllers
 
         DataContext dal = new DataContext();
 
-
+        public IActionResult Index()
+        {
+            return View();
+        }
         public async Task<string> UploadImage(string folderpath, IFormFile file)
         {
             folderpath += Guid.NewGuid().ToString() + "_" + file.FileName;
@@ -36,19 +33,60 @@ namespace BBQ.Controllers
         }
 
 
-
-        public IActionResult Index(Photovm vm)
+        [HttpPost]
+        public async Task<IActionResult> UploadAsync(Photovm vm)
         {
-
-
-            Photo upload=new Photo()
+            var ho = dal.Hotelss.Where(x => x.name == vm.hname).ToList();
+            int hid = ho[0].hid;
+            string folderpath = "hotelimage/";
+            Photo upload1=new Photo()
             {
+                hid = hid,
+                photosurl= await UploadImage(folderpath,vm.img1)
 
 
 
             };
+            Photo upload2 = new Photo()
+            {
+                hid = hid,
+                photosurl = await UploadImage(folderpath, vm.img2)
 
-            return View();
+
+
+            };
+            Photo upload3 = new Photo()
+            {
+                hid = hid,
+                photosurl = await UploadImage(folderpath, vm.img3)
+
+
+
+            };
+            Photo upload4 = new Photo()
+            {
+                hid = hid,
+                photosurl = await UploadImage(folderpath, vm.img4)
+
+
+
+            };
+            Photo upload5 = new Photo()
+            {
+                hid = hid,
+                photosurl = await UploadImage(folderpath, vm.img5)
+
+
+
+            };
+            dal.Photos.Add(upload1);
+            dal.Photos.Add(upload2);
+            dal.Photos.Add(upload3);
+            dal.Photos.Add(upload4);
+            dal.Photos.Add(upload5);
+            dal.SaveChanges();
+            return RedirectToAction("Index", "Photo");
+           
         }
        
     }
