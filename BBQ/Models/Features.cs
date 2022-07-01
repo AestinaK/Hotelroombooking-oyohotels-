@@ -9,5 +9,6 @@ namespace BBQ.Models
         [Key]
         public int fid { get; set; }
         public string name { get; set; }
+        public int rtid { get; set; }
     }
 }

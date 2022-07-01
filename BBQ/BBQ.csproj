@@ -50,6 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Report\" />
     <Folder Include="wwwroot\hotelimage\" />
   </ItemGroup>
 

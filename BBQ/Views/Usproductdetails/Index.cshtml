@@ -203,11 +203,23 @@
                                     </h4>
 
                                     
-
+                                   @* @foreach(var fe in ViewBag.features){
                                     
+                                        if (@item.rtid==@fe.rtid){
+                                                            <p class="mb-3"> <em class="bi bi-arrow-right"></em> @fe.name </p>
+                                                        }
+                                                        else
+
+                                                        {
+                                                           <p class="mb-3"> <em class="bi bi-arrow-right"></em> free wifi </p> 
+                                    }
+                                    }*@
+                                   
                                    
                                        
 
+                                                            
+                                                        
                                     
                                 </div>
 
@@ -215,7 +227,7 @@
                                                     @foreach(var p in ViewBag.price)
                                                     {
                                                         if(@p.rtid==@item.rtid){
-                                                         <h3 class="mb-0 font-weight-semibold">@(@p.price * @ViewBag.rooms)</h3>
+                                                         <h3 class="mb-0 font-weight-semibold">Rs @(@p.price * @ViewBag.rooms)</h3>
                                                     }
                                                     }
                                                     

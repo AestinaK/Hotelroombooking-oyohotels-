@@ -58,9 +58,11 @@ namespace BBQ.Controllers
             var grouptypekey = grouptype.Select(z => z.Key).ToList();
             var details = dal.Roomtypes.Where(x => grouptypekey.Contains(x.rtid)).ToList();
             var price = dal.Prices.Where(b => b.hid == hid).Where(x => grouptypekey.Contains(x.rtid));
-            
 
-            
+
+            var features = dal.Featuress.ToList();
+            ViewBag.features = features;
+
             //  var roomtypeid=grouptype.Select rtid 
 
             ViewBag.typess = details;

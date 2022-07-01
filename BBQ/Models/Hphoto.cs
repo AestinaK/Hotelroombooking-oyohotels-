@@ -13,4 +13,7 @@ namespace BBQ.Models
         public int hid { get; set; }
 
     }
+
+
+    
 }

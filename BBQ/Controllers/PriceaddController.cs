@@ -53,8 +53,8 @@ namespace BBQ.Controllers
                 Console.WriteLine(e);
             }
 
-  
-            return View();
+
+            return Redirect("/Priceadd/Index");
         }
     }
 }
