@@ -66,9 +66,23 @@ namespace BBQ.Controllers
             //  var roomtypeid=grouptype.Select rtid 
 
             ViewBag.typess = details;
-            ViewBag.price = price; 
+            ViewBag.price = price;
 
-             return View();
+            //for releted product 
+
+            var hotelsdetailsss = dal.Hotelss.Find(hid);
+
+            var r_booked_rooms = dal.Roomreservations.Where(x => (start >= x.checkin && start <= x.checkout) || (end >= x.checkin && end <= x.checkout)).Select(a => a.roomid).Distinct().ToList();
+            var r_available_rooms = dal.Rooms.Where(x => !r_booked_rooms.Contains(x.rid)).ToList();
+            var r_roomHotelGroup = r_available_rooms.GroupBy(x => x.hid);
+            var r_hotelIds = r_roomHotelGroup.Where(x => x.Count() >= noofrooms).Select(z => z.Key).ToList();
+
+            var r_hotels = dal.Hotelss.Where(a => a.address == hotelsdetailsss.address).Where(x => r_hotelIds.Contains(x.hid)).OrderByDescending(y => y.star).ToList();
+            ViewBag.r_hotel = r_hotels;
+            var r_images = dal.Hphotos.ToList();
+            ViewBag.r_image = r_images;
+
+            return View();
         }
 
 

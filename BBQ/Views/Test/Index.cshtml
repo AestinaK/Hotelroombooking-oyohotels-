@@ -205,6 +205,7 @@
                                     <h3 class="mb-0 font-weight-semibold">Rs @item.price</h3>
 
                                     <div>
+
                                         <i class="icon ni ni-star-fill"></i>
                                         <i class="icon ni ni-star-fill"></i>
                                         <i class="icon ni ni-star-fill"></i>
@@ -213,7 +214,7 @@
 
                                     </div>
 
-                                    <div class="text-muted">5 reviews</div>
+                                    <div class="text-muted">@item.star Star hotel </div>
 
 
                                     <a asp-controller="Usproductdetails" asp-action="Index" asp-route-hid="@item.hid" asp-route-sstart="@ViewBag.checkin"  asp-route-eend="@ViewBag.checkout" asp-route-noofrooms="@ViewBag.noofroom" class="btn btn-warning mt-4 text-white">See Availibility</a>

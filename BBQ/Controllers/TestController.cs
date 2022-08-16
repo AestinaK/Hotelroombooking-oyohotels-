@@ -32,7 +32,7 @@ namespace BBQ.Controllers
             var roomHotelGroup = available_rooms.GroupBy(x => x.hid); 
             var hotelIds = roomHotelGroup.Where(x => x.Count() >= vm.noofrooms).Select(z => z.Key).ToList();
             
-            var hotels = dal.Hotelss.Where(a => a.address==vm.address).Where(x => hotelIds.Contains(x.hid)).ToList();
+            var hotels = dal.Hotelss.Where(a => a.address==vm.address).Where(x => hotelIds.Contains(x.hid)).OrderByDescending(y => y.star).ToList();
             var image = dal.Hphotos.ToList();
                 ViewBag.image = image;
 /*           

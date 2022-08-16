@@ -60,6 +60,19 @@ namespace BBQ.Controllers
                for (int i = 0; i <=t; i++) { 
                 dal.Roomreservations.Add(bookrooms[i]);
                 }
+
+                var rec = dal.Hotelss.Where(a => a.hid == hid).SingleOrDefault().star;
+
+                Recommend reco = new Recommend()
+                {
+                     user = user,
+                    star = rec
+                    
+
+                };
+
+                dal.Recommends.Add(reco);
+
                 dal.SaveChanges();
 
 

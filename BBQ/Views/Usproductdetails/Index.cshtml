@@ -193,7 +193,7 @@
                             <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
                                 <div class="mr-2 mb-3 mb-lg-0">
                                     <a >
-                                    <img  src="~/userside/images/product/hotel3.jpg" width="150" height="150" alt="">
+                                    <img  src="~/userside/images/product/hotel7.jpg" width="150" height="150" alt="">
                                    </a>
                                 </div>
 
@@ -304,11 +304,61 @@
                      </div>
 
 
+                     <!--releted product-->
+
+                                 <div class="nk-block nk-block-lg">
+                                <div class="nk-block-head">
+                                    <div class="nk-block-between g-3">
+                                        <div class="nk-block-head-content">
+                                            <h3 class="nk-block-title page-title">Trending Hotels </h3>
+                                        </div>
+                                    </div>
+                                </div><!-- .nk-block-head -->
+                                <div class="slider-init row" data-slick='{"slidesToShow": 4, "centerMode": false, "slidesToScroll": 1, "infinite":false, "responsive":[ {"breakpoint": 1540,"settings":{"slidesToShow": 3}},{"breakpoint": 992,"settings":{"slidesToShow": 2}}, {"breakpoint": 576,"settings":{"slidesToShow": 1}} ]}'>
+                                   
+                             @foreach(var ir in ViewBag.r_hotel){
+
+                                 if(ir.hid !=ViewBag.hid){
+                                    <div class="col">
+                                        <div class="card card-bordered product-card">
+                                            <div class="product-thumb">
+                                                <a>
+                                                    @foreach(var images in ViewBag.r_image){
+                                                        if(images.hid==ir.hid){
+                                                    <img class="card-img-top" src="@images.url" alt="">
+                                                    }
+                                                    }
+                                                </a>
+                                               
+                                            </div>
+                                            <div class="card-inner text-center">
+                                                <ul class="product-tags">
+                                                    <li><a href="#">@ir.address</a></li>  
+                                                  
+                                                    
+                                                </ul>
+                                                <ul class="product-tags">
+                                                     
+                                                  
+                                                    <li><a href="#">@ir.star star</a></li>
+                                                </ul>
+                                                <h5 class="product-title"><a asp-controller="Usproductdetails" asp-action="Index" asp-route-hid="@ir.hid" asp-route-sstart="@ViewBag.start"  asp-route-eend="@ViewBag.end" asp-route-noofrooms="@ViewBag.rooms">@ir.name</a></h5>
+                                                <div class="product-price text-primary h5"> RS @ir.price</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                                    }
+                                    <!-- .col -->
+                                   
+                                </div>
+                            </div><!-- .col -->
+
                           <!-- start-->
 
                          
                           <div class="nk-chat-list">
-                                            <h6 class="title overline-title-alt">Reviews</h6>
+                                            <h6 class="title overline-title-alt">Comments</h6>
 
                                             @foreach(var itea in ViewBag.reviews){
 
@@ -331,6 +381,12 @@
                                                                 <div class="status delivered">
                                                                     <em class="icon ni ni-check-circle-fill"></em>
                                                                 </div>
+
+                                                                <!--sub comment start-->
+
+
+
+                                                                <!--sub cmment end -->
                                                             </div>
                                                         </div>
                                                     </a>

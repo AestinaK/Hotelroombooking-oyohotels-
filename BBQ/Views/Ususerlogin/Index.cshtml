@@ -101,6 +101,21 @@
     </div>
     <!-- app-root e -->
     <!-- JavaScript -->
+
+
+    <script>
+        async function fetchdata(){
+            let url='https://ipinfo.io/json?token=dc62ace345a9a8'
+            let response= await fetch(url);
+            let data= await response.json();
+            console.log(data);
+            
+        }
+        fetchdata();
+
+    console.log("ip: ", geoplugin_city())
+
+</script>
     <script src="./assets/js/bundle.js?ver=3.0.0"></script>
 
     <script src="./assets/js/scripts.js?ver=3.0.0"></script>

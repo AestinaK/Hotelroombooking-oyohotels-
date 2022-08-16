@@ -163,11 +163,18 @@
                                     </div>
                                 </div><!-- .nk-block-head -->
                                 <div class="slider-init row" data-slick='{"slidesToShow": 4, "centerMode": false, "slidesToScroll": 1, "infinite":false, "responsive":[ {"breakpoint": 1540,"settings":{"slidesToShow": 3}},{"breakpoint": 992,"settings":{"slidesToShow": 2}}, {"breakpoint": 576,"settings":{"slidesToShow": 1}} ]}'>
+                                   
+                                    @foreach(var item in ViewBag.data){
                                     <div class="col">
                                         <div class="card card-bordered product-card">
                                             <div class="product-thumb">
-                                                <a href="html/product-details.html">
-                                                    <img class="card-img-top" src="~/userside/images/product/hotel3.jpg" alt="">
+                                                <a>
+                                                    @foreach(var d in ViewBag.photo){
+                                                        if(item.hid==d.hid){
+                                                  
+                                                   <img class="card-img-top" src="@d.url" alt="">
+                                                    }
+                                                    }
                                                 </a>
                                                 <ul class="product-badges">
                                                     <li><span class="badge bg-success">New</span></li>
@@ -179,18 +186,20 @@
                                             </div>
                                             <div class="card-inner text-center">
                                                 <ul class="product-tags">
-                                                    <li><a href="#">Birtamode</a></li>
+                                                    <li><a href="#">@item.address</a></li>
                                                 </ul>
-                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">Everest Hotel & Loudge</a></h5>
-                                                <div class="product-price text-primary h5"><small class="text-muted del fs-13px">RS3500</small> RS2400</div>
+                                                <h5 class="product-title"><a href="~/userside/html/product-details.html">@item.name</a></h5>
+                                                <div class="product-price text-primary h5"> Rs @item.price</div>
                                             </div>
                                         </div>
                                     </div><!-- .col -->
+                                    }
+
                                     <div class="col">
                                         <div class="card card-bordered product-card">
                                             <div class="product-thumb">
                                                 <a href="html/product-details.html">
-                                                    <img class="card-img-top" src="~/userside/images/product/hotel2.jpg" alt="">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel7.jpg" alt="">
                                                 </a>
                                                 <ul class="product-actions">
                                                     <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
@@ -210,7 +219,7 @@
                                         <div class="card card-bordered product-card">
                                             <div class="product-thumb">
                                                 <a href="html/product-details.html">
-                                                    <img class="card-img-top" src="~/userside/images/product/hotel4.jpg" alt="">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel7.jpg" alt="">
                                                 </a>
                                                 <ul class="product-badges">
                                                     <li><span class="badge bg-danger">Hot</span></li>
@@ -233,7 +242,7 @@
                                         <div class="card card-bordered product-card">
                                             <div class="product-thumb">
                                                 <a href="html/product-details.html">
-                                                    <img class="card-img-top" src="~/userside/images/product/hotel3.jpg" alt="">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel7.jpg" alt="">
                                                 </a>
                                                 <ul class="product-actions">
                                                     <li><a href="#"><em class="icon ni ni-cart"></em></a></li>
@@ -253,7 +262,7 @@
                                         <div class="card card-bordered product-card">
                                             <div class="product-thumb">
                                                 <a href="html/product-details.html">
-                                                    <img class="card-img-top" src="~/userside/images/product/hotel4.jpg" alt="">
+                                                    <img class="card-img-top" src="~/userside/images/product/hotel7.jpg" alt="">
                                                 </a>
                                                 <ul class="product-actions">
                                                     <li><a href="#"><em class="icon ni ni-cart"></em></a></li>

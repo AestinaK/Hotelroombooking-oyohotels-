@@ -11,6 +11,7 @@
     <Content Remove="Views\AdRoom\Price.cshtml" />
     <Content Remove="Views\AdRoom\UpdateRoom.cshtml" />
     <Content Remove="Views\AdRoom\updroom.cshtml" />
+    <Content Remove="Views\Tryho\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +29,7 @@
     <_ContentIncludedByDefault Remove="Views\AdRoom\Price.cshtml" />
     <_ContentIncludedByDefault Remove="Views\AdRoom\UpdateRoom.cshtml" />
     <_ContentIncludedByDefault Remove="Views\AdRoom\updroom.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Tryho\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +37,7 @@
     <None Include="Views\AdRoom\Price.cshtml" />
     <None Include="Views\AdRoom\UpdateRoom.cshtml" />
     <None Include="Views\AdRoom\updroom.cshtml" />
+    <None Include="Views\Tryho\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +55,10 @@
   <ItemGroup>
     <Folder Include="Report\" />
     <Folder Include="wwwroot\hotelimage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Tryho\Index.cshtml" />
   </ItemGroup>
 
 </Project>
