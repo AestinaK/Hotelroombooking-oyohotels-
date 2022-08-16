@@ -41,6 +41,7 @@ namespace BBQ.Controllers
                 {
                     name=vm.hotelname,
                     address=vm.address,
+                    star=vm.star,
                     price=0
 
                 };
@@ -62,7 +63,7 @@ namespace BBQ.Controllers
 
             dal.SaveChanges();
 
-            return RedirectToAction("Index", "AdHotel");
+            return RedirectToAction("Index", "Ususerlogin");
 
         }
 

@@ -13,5 +13,7 @@
         public string hotelname { get; set; }
         public string username { get; set; }
         public string address { get; set; }
+
+        public int star { get; set; }
     }
 }

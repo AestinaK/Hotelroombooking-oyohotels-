@@ -10,6 +10,7 @@ namespace BBQ.Models
         [Key]
         public int hid { get; set; }
         public string name { get; set; }
+        public int star { get; set; }
         public string address { get; set; }
         public int price { get; set; }
     }
