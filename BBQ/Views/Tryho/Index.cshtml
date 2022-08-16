@@ -5,12 +5,20 @@
 <html>
 
     <head>
-<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
 </head>
 
 <body>
 <script>
-    console.log("ip: ", geoplugin_city())
+    async function fetchText(){
+        let url='https://ipinfo.io/json?token=dc62ace345a9a8';
+        let response=await fetch(url);
+        let data= await response.json();
+        console.log(data);
+        var city=data.city;
+        document.getElementById("coordinate").value = city;
+    }
+    fetchText();
 
 </script>
 </body>

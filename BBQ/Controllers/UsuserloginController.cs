@@ -20,7 +20,7 @@ namespace BBQ.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string password)
+        public IActionResult Login(string email, string password, string Geolocation )
         {
             var userlist = dal.Ususerlogins.Where(X => X.email.Equals(email)).Where(X => X.password.Equals(Encryption(password))).ToList();
 
@@ -32,10 +32,12 @@ namespace BBQ.Controllers
                 string em = sessionlist[0].email;
                 string pw = sessionlist[0].password;
                 string role = sessionlist[0].role;
+                string address = Geolocation;
                 
 
                 HttpContext.Session.SetString("role", role);
-                
+                HttpContext.Session.SetString("address", address);
+
                 HttpContext.Session.SetString("email", em);
                 HttpContext.Session.SetString("password", pw);
 

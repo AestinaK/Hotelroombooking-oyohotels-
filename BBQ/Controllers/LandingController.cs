@@ -9,13 +9,18 @@ namespace BBQ.Controllers
         DataContext dal = new DataContext();
         public IActionResult Index()
         {
+
+             var addresss = HttpContext.Session.GetString("address"); 
             var email = HttpContext.Session.GetString("email");
             var rec = dal.Recommends.Where(a=> a.user == email).ToList();
+            var address = "bhadrapur";
             var no=rec.Count();
-            var hotele=dal.Hotelss.Where(x=> x.address == "birtamode").ToList();
+            
+            var hotele = dal.Hotelss.Where(x => x.address == address).ToList();
             var hc=hotele.Count();
             var hcc = hc - 1;
             var c = no - 1;
+            
             List<Hotels> hot= new List<Hotels>();
             var newdata = hotele.Where(x => rec.Any(y => y.star == x.star)).Select(x => new Hotels()
             {

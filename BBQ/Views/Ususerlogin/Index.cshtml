@@ -19,6 +19,42 @@
 </head>
 
 <body class="nk-body bg-white npc-general pg-auth">
+
+
+       <script>
+        const x = document.getElementById("demo");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        function showPosition(position) {
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            var concatedvalue = lat +","+ lon;
+            document.getElementById("coordinatee").value = lat+","+lon;
+            
+        }
+        getLocation();
+
+    async function fetchText(){
+        let url='https://ipinfo.io/json?token=dc62ace345a9a8';
+        let response=await fetch(url);
+        let data= await response.json();
+        console.log(data);
+        var city=data.city;
+        document.getElementById("coordinate").value = city;
+    }
+    fetchText();
+
+</script>
+    
+
+
     <div class="nk-app-root">
         <!-- main s -->
         <div class="nk-main ">
@@ -49,6 +85,7 @@
                                         </div>  
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control form-control-lg" id="email" name="email" placeholder="Enter your address or username">
+                                             <input type="text" id="coordinate" class="form-control form-control-lg"  name="Geolocation" hidden>
                                         </div>
                                     </div>
 
@@ -79,7 +116,7 @@
                                        <input type="submit" onclick="return userValid(); " value="Login" class="btn btn-primary submit-btn btn-block" />
                                     </div>
                                 </form>
-                                <div class="form-note-s2 text-center pt-4"> New on our platform? <a asp-controller="Ususerregistration" asp-action="Index">Create an account</a>
+                                <div class="form-note-s2 text-center pt-4"> New on our platform? <a asp-controller="Ususerregistration" asp-action="Insert">Create an account</a>
                                 </div>
                                 <div class="text-center pt-4 pb-3">
                                     <h6 class="overline-title overline-title-sap"><span>OR</span></h6>
