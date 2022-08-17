@@ -35,6 +35,7 @@ namespace BBQ.Controllers
                     email = vm.email,
                     password = Encryption(vm.password),
                     role="admin",
+                    name=vm.username,
                     hname=vm.hotelname
                 };
                 Hotels login3 = new Hotels()
